@@ -15,11 +15,7 @@
     width: 100%;
     height: 100%;
     top: 60vh;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    z-index: 10; */
+
 
 }
 .content h1 {
@@ -31,6 +27,7 @@
     font-weight: 400;
     margin-bottom: 1.6rem;
     color: #fff;
+    padding: 2rem 4rem;
 }
 
 .content .Avatar {
