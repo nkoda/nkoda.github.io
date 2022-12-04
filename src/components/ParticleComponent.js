@@ -1,7 +1,8 @@
 import React, {useCallback} from 'react'
 import Particles from 'react-tsparticles'
+import {Link} from 'react-router-dom'
 import {loadFull} from 'tsparticles'
-import {Avatar} from '@mui/material'
+import {Avatar, IconButton} from '@mui/material'
 import './ParticleComponent.css'
 
 const ParticleComponent = () => {
@@ -97,11 +98,28 @@ const ParticleComponent = () => {
           sx = {{width:'15%', height:'auto', justifyContent: "center", display: "inline-flex"}} ></Avatar>
         <h1>About Me.</h1>
         <p className='description'>
-            I am a recent graduate from the University of British Columbia looking for new grad opportunities. 
-            A detail-oriented new graduate and aspiring Data Engineer with 2 years of experience in software development. 
-            Driven to apply my technical aptitude at Visa Incorporated by designing, optimizing, and implementing data processes to transform raw data into gain insights to improve clientele experiences. Specialized in Python, experienced in ETL, SQL, NoSQL,  and database concepts. 
+            A recent physics and data science graduate from the University of British Columbia looking for new grad opportunities. 
+            A detail-oriented individual and data science enthusiast with 2 years of experience in full-stack software development at Emerging Media Lab. 
+            I am driven to apply my technical aptitude by designing, optimizing, and implementing data processes to transform raw data into gain insights to improve clientele experiences. 
+            Specialized in Python, experienced in React.js, ETL, SQL, NoSQL, and machine learning concepts. 
         </p>
+        <p>
+            In my spare time I enjoy spending time with my family and friends, skiing, watching TV shows, beach volleyball,
+            and travelling. So far I've been to 13 countries in 3 continents! On the weekends you can either find me cafe hunting
+            or working my car. 
+        </p>
+        <p>
+            Come say hi, I'd love to talk about any of the topics above.
+        </p>
+    <div>
+          {/* <IconButton target={"_blank"} href={"https://www.linkedin.com/in/nikkodumrique/"} title={"nikkodumrique"}>
+            <LinkedIn />
+          </IconButton> */}
+      <Link to='/resume' className='btn-light'>linkedin </Link>
+      <Link to='/github' className='btn-light'>Github </Link>
+      <Link to='/Email' className='btn-light'>Email </Link>
     </div>
+  </div>
   </div>
 
 )

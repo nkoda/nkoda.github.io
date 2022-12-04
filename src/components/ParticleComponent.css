@@ -30,6 +30,13 @@
     padding: 2rem 4rem;
 }
 
+.content .btn {
+    margin: 1rem, .2rem;
+}
+.content .btn-light {
+    margin: 1rem, .2rem;
+}
+
 .content .Avatar {
     align-items: center;
     text-align: center;
