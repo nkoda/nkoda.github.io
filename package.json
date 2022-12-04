@@ -41,6 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.16",
     "gh-pages": "^4.0.0",
     "react-tsparticles": "^2.5.3",
     "tsparticles": "^2.5.3"

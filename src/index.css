@@ -9,10 +9,13 @@
 h1,p,a {
     color: #fff;
 }
+h2,p,a {
+    color: #fff;
+}
 
 body {
     margin: 0;
-    font-family: 'Archivo Black', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Poiret One','Archivo Black', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvectica Neue',
     'sans-serif';
     -webkit-font-smoothing: antialiased;
@@ -30,7 +33,7 @@ a {
 
 .btn {
     padding: 12px, 32px;
-    font-size: 1.2rem;
+    font-size: 3rem;
     text-transform: uppercase;
     background: transparent;
     color: #fff;
