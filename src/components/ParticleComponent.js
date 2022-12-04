@@ -1,8 +1,8 @@
 import React, {useCallback} from 'react'
 import Particles from 'react-tsparticles'
-import {Link} from 'react-router-dom'
 import {loadFull} from 'tsparticles'
-import {Avatar, IconButton} from '@mui/material'
+import {Avatar} from '@mui/material'
+import {FaLinkedin, FaEnvelope, FaGithub} from 'react-icons/fa'
 import './ParticleComponent.css'
 
 const ParticleComponent = () => {
@@ -112,12 +112,15 @@ const ParticleComponent = () => {
             Come say hi, I'd love to talk about any of the topics above.
         </p>
     <div>
-          {/* <IconButton target={"_blank"} href={"https://www.linkedin.com/in/nikkodumrique/"} title={"nikkodumrique"}>
-            <LinkedIn />
-          </IconButton> */}
-      <Link to='/resume' className='btn-light'>linkedin </Link>
-      <Link to='/github' className='btn-light'>Github </Link>
-      <Link to='/Email' className='btn-light'>Email </Link>
+        <a href='https://www.linkedin.com/in/nikkodumrique/' target='_blank'>
+          <FaLinkedin size={40} style={{color: '#fff', marginRight: '2rem'}}></FaLinkedin>
+        </a>
+        <a href='https://github.com/nkoda' target='_blank'>
+          <FaGithub size={40} style={{color: '#fff', marginRight: '2rem'}}></FaGithub>
+        </a>
+        <a href='mailto:dumriquenikko@gmail.com'>
+          <FaEnvelope size={40} style={{color: '#fff', marginRight: '2rem'}}></FaEnvelope>
+        </a>
     </div>
   </div>
   </div>
