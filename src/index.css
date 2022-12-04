@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+
+h1,p {
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Archivo Black', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvectica Neue',
+    'sans-serif';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background:rgb(111, 111, 111);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 12px, 32px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff; 
+    cursor: pointer;
+}
+
+.btn-light {
+    background: rgba(255,255,255, .2);
+}
+
+.btn:hover {
+    background: rgba(255,255,255, .2);
+}
