@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nkoda.github.io/static/css/main.b10ce008.css",
-    "main.js": "/nkoda.github.io/static/js/main.f7757a8d.js",
-    "index.html": "/nkoda.github.io/index.html",
-    "main.b10ce008.css.map": "/nkoda.github.io/static/css/main.b10ce008.css.map",
-    "main.f7757a8d.js.map": "/nkoda.github.io/static/js/main.f7757a8d.js.map"
+    "main.css": "/static/css/main.5a7dfb8d.css",
+    "main.js": "/static/js/main.9e8ed59e.js",
+    "index.html": "/index.html",
+    "main.5a7dfb8d.css.map": "/static/css/main.5a7dfb8d.css.map",
+    "main.9e8ed59e.js.map": "/static/js/main.9e8ed59e.js.map"
   },
   "entrypoints": [
-    "static/css/main.b10ce008.css",
-    "static/js/main.f7757a8d.js"
+    "static/css/main.5a7dfb8d.css",
+    "static/js/main.9e8ed59e.js"
   ]
 }
