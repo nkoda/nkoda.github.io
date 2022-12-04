@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
         <NavigationBarComponent/>
-        <ParticleComponent/>
+        <ParticleComponent/> 
     </div>
   )
 }

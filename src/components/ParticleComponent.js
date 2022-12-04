@@ -28,7 +28,7 @@ const ParticleComponent = () => {
           interactivity: {
               events: {
                   onClick: {
-                      enable: true,
+                      enable: false,
                       mode: "push",
                   },
                   onHover: {
@@ -91,29 +91,16 @@ const ParticleComponent = () => {
           detectRetina: true,
       }}
     />
-    <div className='intro'>
-      {/* <Image source={require('../assets/1654182881838.jpeg')} style={{width: 400, height: 40, borderRadius: 200}}/> */}
-      <div className='about-me'>
-        <ul className='about-me-items'>  
-          <li>
-            <h1 className="title">
-              About Me
-            </h1>  
-          </li>
-          <li>
-            <Avatar className='profile' alt="Nikko Dumrique" 
-                  src="https://media-exp1.licdn.com/dms/image/C5603AQHr33fvL8y4ZQ/profile-displayphoto-shrink_800_800/0/1654182881838?e=1675900800&v=beta&t=nh9brUnXP2vOiitzbnCw1QZLX_sWRmyLgzRgGmicDw0" 
-                  sx = {{width:'15%', height:'15%', justifyContent: "center", display: "flex"}} ></Avatar>
-          </li>
-          <li>
-          <h2 className='description'>
+    <div className='content'>
+        <h1>About Me.</h1>
+        <Avatar className='profile' alt="Nikko Dumrique" 
+          src="https://media-exp1.licdn.com/dms/image/C5603AQHr33fvL8y4ZQ/profile-displayphoto-shrink_800_800/0/1654182881838?e=1675900800&v=beta&t=nh9brUnXP2vOiitzbnCw1QZLX_sWRmyLgzRgGmicDw0" 
+          sx = {{width:'15%', height:'auto', justifyContent: "center", display: "inline-flex"}} ></Avatar>
+        <p className='description'>
             I am a recent graduate from the University of British Columbia looking for new grad opportunities. 
             A detail-oriented new graduate and aspiring Data Engineer with 2 years of experience in software development. 
             Driven to apply my technical aptitude at Visa Incorporated by designing, optimizing, and implementing data processes to transform raw data into gain insights to improve clientele experiences. Specialized in Python, experienced in ETL, SQL, NoSQL,  and database concepts. 
-          </h2>
-          </li>
-        </ul>
-      </div>
+        </p>
     </div>
   </div>
 
