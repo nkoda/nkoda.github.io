@@ -1,9 +1,11 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar'
+import NavigationBarComponent from '../components/NavigationBarComponent'
+import ParticleComponent from '../components/ParticleComponent'
 const Home = () => {
   return (
     <div>
-        <NavigationBar/>
+        <NavigationBarComponent/>
+        <ParticleComponent/>
     </div>
   )
 }

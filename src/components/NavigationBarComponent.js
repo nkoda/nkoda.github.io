@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import './NavigationBar.css'
+import './NavigationBarComponent.css'
 
-const NavigationBar = () => {
+const NavigationBarComponent = () => {
   const[click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
 
   return (
     <div className='header'>
-      <Link to='/'><h1>NIKKO DUMRIQUE</h1></Link>
+      <Link to='/'><h1>NIKKO</h1></Link>
       <ul className={click ? 'nav-menu active' : 'nav-menu'}> 
         <li>
           <Link to='/'>Home</Link>
@@ -31,4 +31,4 @@ const NavigationBar = () => {
   )
 }
 
-export default NavigationBar
+export default NavigationBarComponent

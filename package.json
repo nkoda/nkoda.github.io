@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "react-tsparticles": "^2.5.3",
+    "tsparticles": "^2.5.3"
   }
 }
