@@ -4,6 +4,7 @@ import {FaLinkedin, FaEnvelope, FaGithub} from 'react-icons/fa'
 import GraphParticleComponent from './GraphParticleComponent'
 
 import './AboutMeComponent.css'
+import FooterComponent from './SocialsComponent'
 
 const AboutMeComponent = () => {
   return (
@@ -11,12 +12,11 @@ const AboutMeComponent = () => {
     <GraphParticleComponent/>
     <div className='content'>
         <div className='slogan-right'>
-          <Avatar className='profile' alt="Nikko Dumrique" 
-            src="https://media-exp1.licdn.com/dms/image/C5603AQHr33fvL8y4ZQ/profile-displayphoto-shrink_800_800/0/1654182881838?e=1675900800&v=beta&t=nh9brUnXP2vOiitzbnCw1QZLX_sWRmyLgzRgGmicDw0" 
-            sx = {{width:'13vh', height:'auto', justifyContent: "center", display: "inline-flex"}} ></Avatar>
         </div>
         <div className='slogan-left'>
-          <p>Hello world! My name is</p>
+        <Avatar className='profile' alt="Nikko Dumrique" 
+            src="https://media-exp1.licdn.com/dms/image/C5603AQHr33fvL8y4ZQ/profile-displayphoto-shrink_800_800/0/1654182881838?e=1675900800&v=beta&t=nh9brUnXP2vOiitzbnCw1QZLX_sWRmyLgzRgGmicDw0" 
+            sx = {{width:'13vh', height:'auto', justifyContent: "center", display: "inline-flex"}} ></Avatar>
           <h1>Nikko Dumrique.</h1>
           <h2>I transform data into insight.</h2>
         <p>
@@ -27,12 +27,13 @@ const AboutMeComponent = () => {
         <p>
         Specialized in <span className='highlight'>Python </span>, experienced in <span className='highlight'>React.js, ETL, SQL, NoSQL, and machine learning concepts. </span>
         </p>
-        </div>  
         <p>
-            Come say hi, I'd love to talk about any of the topics above.
+          Come say hi, I'd love to talk about any of the topics above.
         </p>
+        </div>  
     <div className='socials'>
-        <a href='https://www.linkedin.com/in/nikkodumrique/' target='_blank'>
+      <FooterComponent></FooterComponent>
+        {/* <a href='https://www.linkedin.com/in/nikkodumrique/' target='_blank'>
           <FaLinkedin size={40} style={{color: '#fff', marginRight: '2rem'}}></FaLinkedin>
         </a>
         <a href='https://github.com/nkoda' target='_blank'>
@@ -40,7 +41,7 @@ const AboutMeComponent = () => {
         </a>
         <a href='mailto:dumriquenikko@gmail.com'>
           <FaEnvelope size={40} style={{color: '#fff'}}></FaEnvelope>
-        </a>
+        </a> */}
     </div>
   </div>
   </div>

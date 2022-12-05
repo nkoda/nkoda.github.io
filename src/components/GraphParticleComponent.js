@@ -54,7 +54,7 @@ const GraphParticleComponent = () => {
                 color: "#a37518",
                 distance: 250,
                 enable: true,
-                opacity: 0.05,
+                opacity: 0.08,
                 width: 3,
             },
             collisions: {
@@ -64,7 +64,7 @@ const GraphParticleComponent = () => {
                 directions: "bottom",
                 enable: true,
                 outModes: {
-                    default: "out",
+                    default: "bounce",
                 },
                 random: false,
                 speed: 0.3,
