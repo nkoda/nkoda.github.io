@@ -54,7 +54,7 @@ const GraphParticleComponent = () => {
                 color: "#a37518",
                 distance: 250,
                 enable: true,
-                opacity: 0.1,
+                opacity: 0.05,
                 width: 3,
             },
             collisions: {
@@ -78,7 +78,7 @@ const GraphParticleComponent = () => {
                 value: 200,
             },
             opacity: {
-                value: 0.1,
+                value: 0.05,
             },
             shape: {
                 type: "edge",
