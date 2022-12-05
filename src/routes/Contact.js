@@ -1,13 +1,14 @@
 import React from 'react'
 import NavigationBarComponent from '../components/NavigationBarComponent'
-import ParticleComponent from '../components/AboutMeComponent'
-const Home = () => {
+import GraphParticleComponent from '../components/GraphParticleComponent'
+
+const Contact = () => {
   return (
     <div>
         <NavigationBarComponent/>
-        <ParticleComponent/> 
+        <GraphParticleComponent/>
     </div>
   )
 }
 
-export default Home
+export default Contact
