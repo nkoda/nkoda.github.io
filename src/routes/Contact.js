@@ -1,21 +1,29 @@
 import React from 'react'
 import NavigationBarComponent from '../components/NavigationBarComponent'
 import GraphParticleComponent from '../components/GraphParticleComponent'
-
+import {FaEnvelope} from 'react-icons/fa'
+import {Button} from '@mui/material'
 import './Contact.css'
-import FooterComponent from '../components/SocialsComponent'
+import SocialsComponent from '../components/SocialsComponent'
 const Contact = () => {
   return (
     <div>
         <NavigationBarComponent/>
         <GraphParticleComponent/>
         <div className='contact'>
-            <h1>Get In Touch</h1>
+            <h1>Contact</h1>
             <div className='contact-container'>
                 <p>I am currently looking for new graduate opportunities in data analytics, data science, and software development.
                 Whether you have a question or just want to reach out, I would love to chat.</p>
-                <div style={{paddingTop:'1rem'}}></div>
-                <FooterComponent></FooterComponent>
+                <div style={{paddingTop:'2rem'}}></div>
+                <a href='mailto:dumriquenikko@gmail.com'>
+                    <Button variant="contained" size="large" style={{
+                        borderRadius: 35,
+                        backgroundColor: "#ffffff",
+                        color:'#000000',
+                        fontSize: "16px"}}>Get in Touch</Button>
+                </a>
+                {/* <SocialsComponent></SocialsComponent> */}
             </div>
         </div>
     </div>
