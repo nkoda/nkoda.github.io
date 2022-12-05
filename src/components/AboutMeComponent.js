@@ -13,7 +13,7 @@ const AboutMeComponent = () => {
         <div className='slogan-right'>
           <Avatar className='profile' alt="Nikko Dumrique" 
             src="https://media-exp1.licdn.com/dms/image/C5603AQHr33fvL8y4ZQ/profile-displayphoto-shrink_800_800/0/1654182881838?e=1675900800&v=beta&t=nh9brUnXP2vOiitzbnCw1QZLX_sWRmyLgzRgGmicDw0" 
-            sx = {{width:'13%', height:'auto', justifyContent: "center", display: "inline-flex"}} ></Avatar>
+            sx = {{width:'13vh', height:'auto', justifyContent: "center", display: "inline-flex"}} ></Avatar>
         </div>
         <div className='slogan-left'>
           <p>Hello world! My name is</p>

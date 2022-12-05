@@ -23,37 +23,33 @@
 }
 .content .slogan-left {
     text-align: left;
-    padding: 1rem 5rem;
-    grid: column;
-    grid-template-columns: repeat(2, 1fr);
+    /* padding: 1rem 5rem; */
 }
 .content .slogan-right {
     text-align: left;
-    padding: 1rem 5rem;
-    grid: column;
-    grid-template-columns: repeat(2, 1fr);
+    /* padding: 1rem 5rem; */
 }
 .content .slogan-left p {
     text-align: left;
     padding:  0rem;
-    grid: column;
 }
 
 .content h1 {
-    font-size: 4rem;
+    font-size: 6vh;
     color: #fff;
 }
 .content h2 {
-    font-size: 2rem;
-    color: #fff;
+    font-size: 4vh;
+    padding-bottom:1rem;
+    color: rgb(132, 110, 58);
 }
 .content p {
+    max-width: 720px;
     text-align: left;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 2.5vh;
+    font-weight: 400;
     margin-bottom: 1.6rem;
     color: #fff;
-    padding-right: 6rem;
     padding: 1rem 5rem;
 }
 
