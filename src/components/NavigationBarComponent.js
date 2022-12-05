@@ -9,7 +9,7 @@ const NavigationBarComponent = () => {
 
   return (
     <div className='header'>
-      <Link to='/'><h1>NIKKO</h1></Link>
+      <Link to='/'><h1 className='logo'>NIKKO</h1></Link>
       <ul className={click ? 'nav-menu active' : 'nav-menu'}> 
         <li>
           <Link to='/'>Home</Link>
@@ -18,11 +18,14 @@ const NavigationBarComponent = () => {
           <Link to='/Contact'>Contact</Link>
         </li>
         <li>
-          <Link to='/Resume'>Resume</Link>
+          <a href='https://drive.google.com/file/d/1D3F-hxTLQ3BJIxEn4I8LWxZtqvUuw5FC/view?usp=sharing' target='_blank'>
+            {/* <Link to='/Resume'>Resume</Link> */}
+            <div>Resume</div>
+          </a>
         </li>
-        <li>
+        {/* <li>
           <Link to='/Projects'>Projects</Link>
-        </li>
+        </li> */}
       </ul>
       <div className='hamburger' onClick={handleClick}>
         {click ? (<FaTimes size={20} style={{color: '#fff'}}/>) : (<FaBars size={20} style={{color: '#fff'}}/>)}

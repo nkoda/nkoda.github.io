@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 .header {
     position: fixed;
     width: 100%;
@@ -9,6 +10,10 @@
     z-index: 10;
 
 
+}
+
+.logo {
+    font-family: 'Archivo Black';
 }
 
 .nav-menu {
