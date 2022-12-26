@@ -19,9 +19,10 @@ const GraphParticleComponent = () => {
         background: {
             color: {
                 value: "#07090f",
+                // value:"FFFFFF"
             },
         },
-        fpsLimit: 60,
+        fpsLimit: 25,
         interactivity: {
             events: {
                 onClick: {

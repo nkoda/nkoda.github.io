@@ -9,7 +9,7 @@ const NavigationBarComponent = () => {
 
   return (
     <div className='header'>
-      <Link to='/'><h1 className='logo'><span className='highlight'>NK</span>ODA</h1></Link>
+      <Link to='/'><h1 className='logo'> NIKKO</h1></Link>
       <ul className={click ? 'nav-menu active' : 'nav-menu'}> 
         <li>
           <Link to='/'>Home</Link>

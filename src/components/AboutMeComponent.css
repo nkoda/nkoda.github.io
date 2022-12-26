@@ -7,6 +7,9 @@
     z-index:-1;
 }
 
+.section {
+    margin-bottom: 3rem;
+}
 .content {
     text-align: left;
     position: absolute;
@@ -59,6 +62,10 @@
     margin: 1rem, .2rem;
 }
 
+.responsive {
+    max-width: 80%;
+    height: auto;
+  }
 /* .content .socials {
     align-items: center;
     text-align: left;
