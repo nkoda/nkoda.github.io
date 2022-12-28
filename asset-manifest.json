@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.4a9dc783.css",
-    "main.js": "/static/js/main.beeb01c4.js",
+    "main.css": "/static/css/main.9e8a5c2b.css",
+    "main.js": "/static/js/main.1db017cb.js",
     "static/media/museums.png": "/static/media/museums.06219eda97839f8d2942.png",
     "static/media/3dmetabolism.png": "/static/media/3dmetabolism.6fca7a54b53450c11968.png",
     "index.html": "/index.html",
-    "main.4a9dc783.css.map": "/static/css/main.4a9dc783.css.map",
-    "main.beeb01c4.js.map": "/static/js/main.beeb01c4.js.map"
+    "main.9e8a5c2b.css.map": "/static/css/main.9e8a5c2b.css.map",
+    "main.1db017cb.js.map": "/static/js/main.1db017cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a9dc783.css",
-    "static/js/main.beeb01c4.js"
+    "static/css/main.9e8a5c2b.css",
+    "static/js/main.1db017cb.js"
   ]
 }
