@@ -64,7 +64,7 @@ const AboutMeComponent = () => {
           <FooterComponent></FooterComponent>
           </div>
 
-      <div className="Projects">
+      <div className="projects">
         <div className="section">
           <h1>Projects:</h1>
         </div>
@@ -72,8 +72,8 @@ const AboutMeComponent = () => {
           <div className="slogan-right"></div>
           <div className="slogan-left">
 
-            <h1>3DMetabolism</h1>
-            <h2>Lead Junior Software Developer</h2>
+            <h2>3DMetabolism</h2>
+            <h3>Lead Junior Software Developer</h3>
             <img src={img_3DMetabolism} class='responsive' width='400px' ></img>
             <p>
               At my last work placement, I worked with a team of developers 
@@ -92,8 +92,8 @@ const AboutMeComponent = () => {
           <div className="slogan-right"></div>
           <div className="slogan-left">
 
-            <h1>Museums</h1>
-            <h2>Full-Stack Developer</h2>
+            <h2>Museums</h2>
+            <h3>Full-Stack Developer</h3>
             <img src={img_museums} class='responsive' width='400px' ></img>
             <p>
               Collaborated with a team within North America's largest 24-hour hackathon, 
