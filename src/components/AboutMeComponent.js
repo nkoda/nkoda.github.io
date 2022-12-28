@@ -77,13 +77,13 @@ const AboutMeComponent = () => {
             <img src={img_3DMetabolism} class='responsive' width='400px' ></img>
             <p>
               At my last work placement, I worked with a team of developers 
-              to develop a 3D interactive data visualization web application and database 
+              to develop fra 3D interactive data visualization web application and database 
               to visualize the metabolic network from scratch.
             </p>
             <p>
-              I worked and lead an agile team to build the app using JavaScript and A-Frame.js to develop the front-end, 
-              model-view-presenter for architecture. I additionally deployed an additional service utilizing Docker, and VMWare
-              to act as a centralized, user-friendly database with RESTful endpoints for the main application to utilize. I additionally 
+              I worked and led an agile team to build the app using JavaScript and A-Frame.js to develop the front-end, 
+              model-view-presenter for architecture. I also deployed an additional service utilizing Docker and VMWare
+              to act as a centralized, user-friendly database with RESTful endpoints for the main application. I additionally 
               wrote python scripts to extract, clean, and load large quantities of raw data from multiple sources to populate our database.
             </p>
           </div>
@@ -98,8 +98,8 @@ const AboutMeComponent = () => {
             <p>
               Collaborated with a team within North America's largest 24-hour hackathon, 
               NWHacks, to develop a social media application for people to share, view, and build communities
-              around NFT artworks - garnering a $600 sponsor prize. I primarily focused on developing the front-end using React.js, but also
-              contributed to the backend where I worked gathering and cleaning data using RESTful endpoints.
+              around NFT artworks - garnering a $600 sponsor prize. I primarily focused on developing the front-end using React.js, but I also
+              contributed to the backend, where I worked gathering and cleaning data using RESTful endpoints.
             </p>
           </div>
         </div>
