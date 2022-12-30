@@ -43,17 +43,7 @@
 .content h2 {
     font-size: 4vh;
     padding-bottom:1rem;
-    color: rgb(241, 208, 43)
-}
-.content .projects h2 {
-    font-size: 4vh;
-    padding-bottom:1rem;
-    color: rgb(255, 255, 255)
-}
-.content .projects h3 {
-    font-size: 3vh;
-    padding-bottom:1rem;
-    color: rgb(241, 208, 43)
+    color: rgb(132, 110, 58);
 }
 .content p {
     max-width: 1080px;
