@@ -77,7 +77,7 @@ const AboutMeComponent = () => {
             <img src={img_3DMetabolism} class='responsive' width='400px' ></img>
             <p>
               At my last work placement, I worked with a team of developers 
-              to develop fra 3D interactive data visualization web application and database 
+              to develop for a 3D interactive data visualization web application and database 
               to visualize the metabolic network from scratch.
             </p>
             <p>
