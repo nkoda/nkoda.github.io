@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.4a9dc783.css",
-    "main.js": "/static/js/main.1f412acd.js",
+    "main.js": "/static/js/main.79663829.js",
     "static/media/museums.png": "/static/media/museums.06219eda97839f8d2942.png",
     "static/media/3dmetabolism.png": "/static/media/3dmetabolism.6fca7a54b53450c11968.png",
+    "static/media/twitter_reporter_api.png": "/static/media/twitter_reporter_api.a067b0a1ba0414018630.png",
     "index.html": "/index.html",
     "main.4a9dc783.css.map": "/static/css/main.4a9dc783.css.map",
-    "main.1f412acd.js.map": "/static/js/main.1f412acd.js.map"
+    "main.79663829.js.map": "/static/js/main.79663829.js.map"
   },
   "entrypoints": [
     "static/css/main.4a9dc783.css",
-    "static/js/main.1f412acd.js"
+    "static/js/main.79663829.js"
   ]
 }
