@@ -22,7 +22,7 @@ const GraphParticleComponent = () => {
                 // value:"FFFFFF"
             },
         },
-        fpsLimit: 25,
+        fpsLimit: 50,
         interactivity: {
             events: {
                 onClick: {
@@ -53,13 +53,13 @@ const GraphParticleComponent = () => {
             links: {
                 // color: "#ffffff",
                 color: "#a37518",
-                distance: 250,
+                distance: 200,
                 enable: true,
                 opacity: 0.08,
                 width: 3,
             },
             collisions: {
-                enable: true,
+                enable: false,
             },
             move: {
                 directions: "bottom",
@@ -68,7 +68,7 @@ const GraphParticleComponent = () => {
                     default: "bounce",
                 },
                 random: false,
-                speed: 0.3,
+                speed: 0.1,
                 straight: true,
             },
             number: {

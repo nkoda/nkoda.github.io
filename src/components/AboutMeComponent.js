@@ -4,6 +4,7 @@ import {FaLinkedin, FaEnvelope, FaGithub} from 'react-icons/fa'
 import GraphParticleComponent from './GraphParticleComponent'
 import img_3DMetabolism from '../assets/3dmetabolism.png'
 import img_museums from '../assets/museums.png'
+import img_twitterReporterApi from '../assets/twitter_reporter_api.png'
 
 import './AboutMeComponent.css'
 import FooterComponent from './SocialsComponent'
@@ -42,13 +43,16 @@ const AboutMeComponent = () => {
                 2 years of experience in full-stack software development{" "}
               </span>
               at UBC’s Emerging Media Lab, where I led the development of
-              educational web-based and virtual-reality projects.
+              educational web-based and virtual-reality projects as a junior developer.
             </p>
             <p>
-              Specialized in <span className="highlight">Python </span>,
+              Specialized in <span className="highlight">Python and Javascript</span>,
               experienced in{" "}
               <span className="highlight">
-                React.js, ETL, SQL, NoSQL, and machine learning concepts.{" "}
+                React.js, ETL, SQL, NoSQL, and machine learning concepts{" "}
+              </span> while currently learning {" "}
+              <span className='highlight'>
+                Node.js and Express.js.
               </span>
             </p>
             <p>
@@ -81,14 +85,29 @@ const AboutMeComponent = () => {
               to visualize the metabolic network from scratch.
             </p>
             <p>
-              I worked and led an agile team to build the app using JavaScript and A-Frame.js to develop the front-end, 
+              I worked and led an agile team as a junior developer to build the app using JavaScript and A-Frame.js to develop the front-end, 
               model-view-presenter for architecture. I also deployed an additional service utilizing Docker and VMWare
               to act as a centralized, user-friendly database with RESTful endpoints for the main application. I additionally 
               wrote python scripts to extract, clean, and load large quantities of raw data from multiple sources to populate our database.
             </p>
           </div>
         </div>
-                <div className="intro">
+        <div className="section">
+          <div className="slogan-right"></div>
+          <div className="slogan-left">
+
+            <h1>Twitter Reporter API</h1>
+            <h2>Back-end Developer</h2>
+            <img src={img_twitterReporterApi} class='responsive' width='400px' ></img>
+            <p>
+              A personal project where I power ChatGPT with Twitter's mass amount of live data from recent user tweets. 
+              This project leverages the concept of a collective mentality through the latest tweets from trending hashtags and creates a summary report with sentiment 
+              to inform people about the latest trends. I used Node.js and Express.js to serve the REST API, with MongoDB to save the trend reports, while using OpenAI 
+              API and Twitter's Developer API for the business logic.
+            </p>
+          </div>
+        </div>
+        <div className="section">
           <div className="slogan-right"></div>
           <div className="slogan-left">
 

@@ -18,7 +18,7 @@ const NavigationBarComponent = () => {
           <Link to='/Contact'>Contact</Link>
         </li>
         <li>
-          <a href='https://drive.google.com/file/d/1D3F-hxTLQ3BJIxEn4I8LWxZtqvUuw5FC/view?usp=sharing' target='_blank'>
+          <a href='https://drive.google.com/file/d/1xdCQgOOH9QvPdqtzPDYZ9DUWFODW8dbp/view?usp=sharing' target='_blank'>
             {/* <Link to='/Resume'>Resume</Link> */}
             <div>Resume</div>
           </a>
