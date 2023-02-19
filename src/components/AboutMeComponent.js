@@ -5,6 +5,7 @@ import GraphParticleComponent from './GraphParticleComponent'
 import img_3DMetabolism from '../assets/3dmetabolism.png'
 import img_museums from '../assets/museums.png'
 import img_twitterReporterApi from '../assets/twitter_reporter_api.png'
+import img_avatar from '../assets/1654182881838.jpg'
 
 import './AboutMeComponent.css'
 import FooterComponent from './SocialsComponent'
@@ -20,7 +21,7 @@ const AboutMeComponent = () => {
             <Avatar
               className="profile"
               alt="Nikko Dumrique"
-              src="https://media-exp1.licdn.com/dms/image/C5603AQHr33fvL8y4ZQ/profile-displayphoto-shrink_800_800/0/1654182881838?e=1675900800&v=beta&t=nh9brUnXP2vOiitzbnCw1QZLX_sWRmyLgzRgGmicDw0"
+              src={img_avatar}
               sx={{
                 width: "13vh",
                 height: "auto",
