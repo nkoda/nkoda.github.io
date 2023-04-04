@@ -9,6 +9,7 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+import SideBarButton from './side-bar-button.component';
 
 const drawerWidth = 240;
 
@@ -37,39 +38,26 @@ const SideBar = ()  => {
         height: '100%',
       }}
     >
-      <ListItem>
-        <ListItemButton>
-          <ListItemIcon>
-            <CottageOutlinedIcon>
-            </CottageOutlinedIcon>
-            <ListItemText primary='Home'/>
-          </ListItemIcon>
-        </ListItemButton>
-      </ListItem>
-      <ListItem>
-        <ListItemButton>
-          <ListItemIcon>
-            <WorkOutlineOutlinedIcon />
-            <ListItemText primary='Resume'/>
-          </ListItemIcon>
-        </ListItemButton>
-      </ListItem>
-      <ListItem>
-        <ListItemButton>
-          <ListItemIcon>
-            <EngineeringOutlinedIcon />
-            <ListItemText primary='Projects'/>
-          </ListItemIcon>
-        </ListItemButton>
-      </ListItem>
-      <ListItem>
-        <ListItemButton>
-          <ListItemIcon>
-            <ForumOutlinedIcon />
-            <ListItemText primary='Contact'/>
-          </ListItemIcon>
-        </ListItemButton>
-      </ListItem>
+      <SideBarButton
+        icon={<CottageOutlinedIcon/>}
+        label='Home'
+        onClick={console.log('hi')}
+      ></SideBarButton>
+      <SideBarButton
+        icon={<WorkOutlineOutlinedIcon/>}
+        label='Resume'
+        onClick={console.log('hi')}
+      ></SideBarButton>
+      <SideBarButton
+        icon={<EngineeringOutlinedIcon/>}
+        label='Projects'
+        onClick={console.log('hi')}
+      ></SideBarButton>
+      <SideBarButton
+        icon={<ForumOutlinedIcon/>}
+        label='Contact'
+        onClick={console.log('hi')}
+      ></SideBarButton>
     </List>
   </Drawer>
   );
