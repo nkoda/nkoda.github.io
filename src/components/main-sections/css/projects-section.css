@@ -5,20 +5,21 @@ li {
     transform-origin: 0 0;
   }
 
-  li > b {
+  b {
     color: aliceblue;
     display: inline-block;
     line-height: 1em;
     transform-origin: 0 0;
   }
-h2{
+h1{
 color: aliceblue;
-display: inline-block;
+display: flexblock;
 line-height: 1em;
 transform-origin: 0 0;
 align-self: center;
 text-align: center;
-font-weight: 300;
+font-size: 2.8em;
+font-weight: 700;
 }
 h3{
 color: aliceblue;
@@ -39,4 +40,8 @@ font-weight: 300;
   .project-section h4 {
     font-weight: 700; /* bold font weight for h4 tags */
     color: aliceblue; /* specific color for h4 tags */
+  }
+
+  .Card {
+    background-color: #224b54;
   }
