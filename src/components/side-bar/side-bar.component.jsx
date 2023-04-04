@@ -10,6 +10,8 @@ import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import SideBarButton from './side-bar-button.component';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import Link from '@mui/material/Link';
 
 import "./side-bar.css";
 
@@ -62,9 +64,21 @@ const SideBar = ({ onClickButton })  => {
       ></SideBarButton>
       <SideBarButton
         icon={<ForumOutlinedIcon/>}
-        label='Contact'
+        label='Links'
         onClick={() => {handleState('contact')}}
       ></SideBarButton>
+      <Link 
+        href='https://drive.google.com/file/d/1OIrW9UatmeCTqBEyARNRjyWsj1fntDWv/view?usp=sharing' 
+        target="_blank" 
+        rel="noopener"
+        underline="none"
+        >
+        <Divider />
+        <SideBarButton
+          icon={<AssignmentIndIcon/>}
+          label='Resume'
+        ></SideBarButton>
+      </Link>
     </List>
   </Drawer>
   );

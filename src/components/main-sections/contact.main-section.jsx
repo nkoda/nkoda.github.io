@@ -34,10 +34,10 @@ const ContactSection = () => {
     return (
       <div>
         <MainSection
-          id='Home'
+          id='Links'
           content={
             <div>
-              <h1>Contact</h1>
+              <h1>Links</h1>
               <Grid container spacing={4} sx={{padding:4, justifyContent:'center'}}>
                 <Grid item xs={12} sm={6} md={3}>
                     <Link href='https://www.linkedin.com/in/nikkodumrique/' target="_blank" rel="noopener">
@@ -68,6 +68,23 @@ const ContactSection = () => {
                         </Typography>
                         <Typography variant="body2" >
                             Chat with me by email!
+                        </Typography>
+                    </CardContent>
+                  </Card>
+                  </Link>
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                <Link href='https://github.com/nkoda' target="_blank" rel="noopener">
+                  <Card sx={cardStyle}>
+                    <Box sx={{padding:5}}>
+                                <GitHubIcon fontSize="large"/>
+                    </Box>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
+                        Email
+                        </Typography>
+                        <Typography variant="body2" >
+                            Checkout my Github
                         </Typography>
                     </CardContent>
                   </Card>

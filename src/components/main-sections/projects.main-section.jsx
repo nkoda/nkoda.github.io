@@ -7,9 +7,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-import img_3DMetabolism from '../../assets/3dmetabolism.png'
-import img_museums from '../../assets/museums.png'
-import img_twitterReporterApi from '../../assets/twitter_reporter_api.png'
+import img_3DMetabolism from '../../assets/3dmetabolism.png';
+import img_museums from '../../assets/museums.png';
+import img_twitterReporterApi from '../../assets/twitter_reporter_api.png';
+import img_atlas from '../../assets/atlas.png';
 
 import './css/projects-section.css'
 
@@ -36,7 +37,7 @@ const ProjectsSection = () => {
                   <Card sx={cardStyle}>
                     <CardMedia
                         sx={{ height: 140 }}
-                        image="/static/images/cards/contemplative-reptile.jpg"
+                        image={img_atlas}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
