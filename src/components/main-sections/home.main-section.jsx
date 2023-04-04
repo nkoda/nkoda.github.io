@@ -8,7 +8,7 @@ import { Avatar } from '@mui/material';
 
 import img_avatar from '../../assets/1654182881838.jpg'
 
-import './main-section.css';
+import './css/main-section.css';
 
 const welcomeMessages = [
     "Welcome to my Website",
@@ -75,7 +75,7 @@ const HomeSection = () => {
                         <Divider sx={{ borderBottomWidth: 2, background:"white" }} ></Divider>
                         <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
                             <h2>Innovating tomorrow's world.</h2>
-                            <h3>A Full Stack developer and Data Scientist based in Vancouver, BC.</h3>
+                            <h3>A Full Stack Developer and Data Scientist based in Vancouver, BC.</h3>
                         </div>
                             <div id="scroll-wrapper">
                                 <div id="scroll-title">Scroll</div>
@@ -85,7 +85,6 @@ const HomeSection = () => {
                         
                     </div>
                 }/>
-            <Divider></Divider>
         </div>
     )
 }
