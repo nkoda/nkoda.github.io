@@ -6,6 +6,7 @@ const ContactSection = () => {
     return(
         <div>
             <MainSection
+                style={{ position: 'sticky', top: 0, zIndex: 1, background: 'white', padding: '20px' }}
                 id='Home'
                 content={
                     <div>

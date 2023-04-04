@@ -13,7 +13,12 @@ import SideBarButton from './side-bar-button.component';
 
 const drawerWidth = 240;
 
-const SideBar = ()  => {
+const SideBar = ({ onClickButton })  => {
+
+  const handleState = (state) => {
+    onClickButton(state);
+  }
+
   return (
     <Drawer
     sx={{
@@ -41,22 +46,22 @@ const SideBar = ()  => {
       <SideBarButton
         icon={<CottageOutlinedIcon/>}
         label='Home'
-        onClick={console.log('hi')}
+        onClick={() => {handleState('home')}}
       ></SideBarButton>
       <SideBarButton
         icon={<WorkOutlineOutlinedIcon/>}
         label='Resume'
-        onClick={console.log('hi')}
+        onClick={() => {handleState('resume')}}
       ></SideBarButton>
       <SideBarButton
         icon={<EngineeringOutlinedIcon/>}
         label='Projects'
-        onClick={console.log('hi')}
+        onClick={() => {handleState('projects')}}
       ></SideBarButton>
       <SideBarButton
         icon={<ForumOutlinedIcon/>}
         label='Contact'
-        onClick={console.log('hi')}
+        onClick={() => {handleState('contact')}}
       ></SideBarButton>
     </List>
   </Drawer>
