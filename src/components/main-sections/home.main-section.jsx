@@ -4,6 +4,9 @@ import Divider from '@mui/material/Divider';
 import Box from '@mui/material'
 import anime from 'animejs';
 import { useEffect, useState } from "react";
+import { Avatar } from '@mui/material';
+
+import img_avatar from '../../assets/1654182881838.jpg'
 
 import './main-section.css';
 
@@ -53,7 +56,7 @@ const HomeSection = () => {
     }, [greeting]);
     
     return(
-        <div>
+        <div class='Home'>
             <MainSection
                 id='Home'
                 content={
@@ -65,8 +68,32 @@ const HomeSection = () => {
                         alignItems: 'center',
                         height: '100%'
                     }}>
+                        {/* <Avatar
+                            className="profile"
+                            alt="Nikko Dumrique"
+                            src={img_avatar}
+                            sx={{
+                                width: "20vh",
+                                height: "auto",
+                                justifyContent: "center",
+                                display: "inline-flex",
+                            }}
+                        ></Avatar> */}
                        <h1 class="ml12">{greeting}</h1>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+                        <div class="intro">
+                        <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
+                        <Divider sx={{ borderBottomWidth: 2, background:"white" }} ></Divider>
+                        <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+                            <h2>Innovating tomorrow's world.</h2>
+                            <h3>A Full Stack developer and Data Scientist based in Vancouver, BC.</h3>
+                        </div>
+                            <div id="scroll-wrapper">
+                                <div id="scroll-title">Scroll</div>
+                                <div id="scroll-down"></div>
+                            </div>
+                        </div>
+                        
                     </div>
                 }/>
             <Divider></Divider>
