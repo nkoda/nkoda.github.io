@@ -11,6 +11,8 @@ import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import SideBarButton from './side-bar-button.component';
 
+import "./side-bar.css";
+
 const drawerWidth = 240;
 
 const SideBar = ({ onClickButton })  => {
@@ -32,7 +34,7 @@ const SideBar = ({ onClickButton })  => {
     variant="permanent"
     anchor="left"
   >
-    <h2>Nikko</h2>
+    <h2 className="logo" style={{color: '#224b54'}}>Nikko Angelo</h2>
     <Divider />
     <List
       sx = {{    

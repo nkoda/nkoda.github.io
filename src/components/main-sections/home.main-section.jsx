@@ -10,20 +10,24 @@ import img_avatar from '../../assets/1654182881838.jpg'
 
 import './css/main-section.css';
 
-const welcomeMessages = [
-    "Welcome to my Website",
-    "私のウェブサイトへようこそ", // Japanese
-    "欢迎来到我的网站", // Mandarin
-    "Bienvenue sur mon site web", // French
-    "Willkommen auf meiner Website" // German
-  ]
 
-  function randomIntFromInterval(min, max) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
-  }
 
 const HomeSection = () => {
+    const welcomeMessages = [
+        "Welcome to my Website",
+        "Bienvenue sur mon site web", // French
+        "Bienvenue sur mon site web", // French
+        "Willkommen auf meiner Website", // German
+        "私のウェブサイトへようこそ", // Japanese
+        "Welcome to my Website",
+        "欢迎来到我的网站" // Mandarin
+    ]
+
     const [greeting, setGreeting] = useState(welcomeMessages[0]);
+
+      function randomIntFromInterval(min, max) { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min)
+      }
 
     useEffect(() => {
         // This animation was borrowed from https://tobiasahlin.com/moving-letters/#12
@@ -37,14 +41,14 @@ const HomeSection = () => {
             translateZ: 0,
             opacity: [0,1],
             easing: "easeOutExpo",
-            duration: 5000,
+            duration: 3000,
             delay: (el, i) => 500 + 30 * i
         }).add({
             targets: '.ml12 .letter',
             translateX: [0,-30],
             opacity: [1,0],
             easing: "easeInExpo",
-            duration: 3000,
+            duration: 2500,
             delay: (el, i) => 100 + 30 * i,
         }).add({
             loopComplete: () => {
@@ -53,7 +57,7 @@ const HomeSection = () => {
             },
             delay: (el, i) => 100 + 30 * i,
         });
-    }, [greeting]);
+    }, [greeting, welcomeMessages]);
     
     return(
         <div class='Home'>

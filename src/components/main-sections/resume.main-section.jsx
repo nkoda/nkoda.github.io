@@ -42,7 +42,7 @@ const ResumeSection = () => {
                                 textAlign:'center',
                                 color:"#CACACA"
                                 }}>
-                                    I transform data into insight. I’m a recent physics and data science graduate from the 
+                                    I’m a recent physics and data science graduate from the 
                                     University of British Columbia seeking new grad opportunities. 
                                     I’m a data science enthusiast with 2 years of experience in full-stack software development 
                                     at UBC’s Emerging Media Lab, where I led the development of educational web-based and 
