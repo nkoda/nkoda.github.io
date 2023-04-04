@@ -1,14 +1,15 @@
 import React from "react";
 import MainSection from "./main-sections.component";
-import Divider from '@mui/material/Divider';
 import './css/projects-section.css';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+
+import img_3DMetabolism from '../../assets/3dmetabolism.png'
+import img_museums from '../../assets/museums.png'
+import img_twitterReporterApi from '../../assets/twitter_reporter_api.png'
 
 import './css/projects-section.css'
 
@@ -36,7 +37,6 @@ const ProjectsSection = () => {
                     <CardMedia
                         sx={{ height: 140 }}
                         image="/static/images/cards/contemplative-reptile.jpg"
-                        title="green iguana"
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
@@ -62,8 +62,7 @@ const ProjectsSection = () => {
                   <Card sx={cardStyle}>
                   <CardMedia
                         sx={{ height: 140 }}
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        title="green iguana"
+                        image={img_twitterReporterApi}
                     />
                   <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
@@ -85,16 +84,15 @@ const ProjectsSection = () => {
                   <Card sx={cardStyle}>
                   <CardMedia
                         sx={{ height: 140 }}
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        title="green iguana"
+                        image={img_museums}
                     />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
                         Museums
                         </Typography>
                         <Typography variant="body2" >
-                            Collaborated with a team within North America's largest 24-hour 
-                            hackathon, NWHacks, to develop a social media application for 
+                            Collaborated with a team within <b>North America's largest 24-hour hackathon,</b>
+                            <b> NWHacks</b>, to develop a social media application for 
                             people to share, view, and build communities around NFT 
                             artworks - garnering a $600 sponsor prize. I primarily focused on
                             developing the front-end using <b>React.js</b>, but I also contributed
@@ -108,8 +106,7 @@ const ProjectsSection = () => {
                   <Card sx={cardStyle}>
                   <CardMedia
                         sx={{ height: 140 }}
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        title="green iguana"
+                        image={img_3DMetabolism}
                     />
                   <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
