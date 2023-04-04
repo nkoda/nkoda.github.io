@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
 
 
 const ContactSection = () => {
@@ -41,11 +42,9 @@ const ContactSection = () => {
                 <Grid item xs={12} sm={6} md={3}>
                     <Link href='https://www.linkedin.com/in/nikkodumrique/' target="_blank" rel="noopener">
                         <Card sx={cardStyle}>
-                        <CardMedia
-                                sx={{ height: 140 }}
-                                image="/static/images/cards/contemplative-reptile.jpg"
-                                title="green iguana"
-                            />
+                            <Box sx={{padding:5}}>
+                                <LinkedInIcon fontSize="large"/>
+                            </Box>
                         <CardContent>    
                             <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
                                 Linkedin
@@ -60,11 +59,9 @@ const ContactSection = () => {
                 <Grid item xs={12} sm={6} md={3}>
                 <Link href='mailto:dumriquenikko@gmail.com' target="_blank" rel="noopener">
                   <Card sx={cardStyle}>
-                  <CardMedia
-                        sx={{ height: 140 }}
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        title="green iguana"
-                    />
+                    <Box sx={{padding:5}}>
+                                <EmailIcon fontSize="large"/>
+                    </Box>
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
                         Email
