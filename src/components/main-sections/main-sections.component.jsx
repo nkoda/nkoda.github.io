@@ -1,7 +1,7 @@
 import React from "react";
 import Box from '@mui/material/Box';
 
-const MainSection = ({ id, content, color='#F4F4F4'}) => {
+const MainSection = ({ id, content, color='#224b54'}) => {
     return(
         <div>
             <Box

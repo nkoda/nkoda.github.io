@@ -8,6 +8,7 @@ import ResumeSection from './components/main-sections/resume.main-section';
 import ProjectsSection from './components/main-sections/projects.main-section';
 import ContactSection from './components/main-sections/contact.main-section';
 import React, { useState, useRef, useEffect } from 'react';
+import anime from 'animejs';//TODO
 
 const drawerWidth = 195;
 
@@ -16,16 +17,6 @@ function App() {
   const resumeRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
 
   const handleNavClick = (state) => {
     switch(state) {
