@@ -1,6 +1,7 @@
 import React from "react";
 import MainSection from "./main-sections.component";
 import Divider from '@mui/material/Divider';
+import './css/projects-section.css';
 
 const ProjectsSection = () => {
     return(

@@ -56,6 +56,8 @@ const ResumeSection = () => {
             <Grid item xs={12} md={6} marginTop={20}>
 
                 <Typography variant="h4">Experience</Typography>
+                <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
+                <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
                 <ul style={{paddingLeft: "15px"}}>
                     <li style={{display: "block"}}><b>UBC Emerging Media Labs:</b> Lead Junior Software Developer</li>
                     <li style={{display: "block", paddingTop:4}}>05/2021 - 08/2021</li>
@@ -64,11 +66,9 @@ const ResumeSection = () => {
                     <li style={{display: "block", paddingTop:10}}><b>UBC Emerging Media Labs:</b> Volunteer VR/AR Developer</li>
                     <li style={{display: "block", paddingTop:4}}>09/2019 - 04/2020</li>
                 </ul>
-                <Typography variant="h4">Education</Typography>
-                <ul>
-                <li><b>University of British Columbia:</b> B.Sc Physics, Minor in Data Science</li>
-                </ul>
                 <Typography variant="h4">Technologies</Typography>
+                <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
+                <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
                 <div style={{display:"flex",}}>
                 <ul>
                     <li style={{display: "block", paddingTop:5}}><b>Languages:</b>  Javascript, Python, C#, Java</li>
@@ -78,6 +78,12 @@ const ResumeSection = () => {
                     <li style={{display: "block", paddingTop:5}}><b>Concepts:</b>  TDD, OOP, SOLID, Data Processing and Modelling, Data Visualization</li>
                 </ul>
                 </div>
+                <Typography variant="h4">Education</Typography>
+                <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
+                <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
+                <ul>
+                <li><b>University of British Columbia:</b> B.Sc Physics, Minor in Data Science</li>
+                </ul>
 
             </Grid>
             <Grid item xs={12}>
