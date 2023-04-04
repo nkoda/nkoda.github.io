@@ -50,7 +50,7 @@ const SideBar = ({ onClickButton })  => {
       ></SideBarButton>
       <SideBarButton
         icon={<WorkOutlineOutlinedIcon/>}
-        label='Resume'
+        label='About'
         onClick={() => {handleState('resume')}}
       ></SideBarButton>
       <SideBarButton

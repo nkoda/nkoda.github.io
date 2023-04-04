@@ -68,17 +68,6 @@ const HomeSection = () => {
                         alignItems: 'center',
                         height: '100%'
                     }}>
-                        {/* <Avatar
-                            className="profile"
-                            alt="Nikko Dumrique"
-                            src={img_avatar}
-                            sx={{
-                                width: "20vh",
-                                height: "auto",
-                                justifyContent: "center",
-                                display: "inline-flex",
-                            }}
-                        ></Avatar> */}
                        <h1 class="ml12">{greeting}</h1>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
                         <div class="intro">
