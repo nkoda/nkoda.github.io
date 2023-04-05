@@ -1,0 +1,42 @@
+li {
+    color: rgb(202, 202, 202);
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+  }
+
+  li > b {
+    color: aliceblue;
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+  }
+h2{
+color: aliceblue;
+display: inline-block;
+line-height: 1em;
+transform-origin: 0 0;
+align-self: center;
+text-align: center;
+font-weight: 300;
+}
+h3{
+color: aliceblue;
+display: inline-block;
+line-height: 1em;
+transform-origin: 0 0;
+align-self: center;
+text-align: center;
+font-weight: 300;
+}
+
+.resume-section {
+    color: #2c2c2c; /* dark color for all text */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .resume-section h4 {
+    font-weight: 700; /* bold font weight for h4 tags */
+    color: aliceblue; /* specific color for h4 tags */
+  }
