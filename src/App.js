@@ -113,6 +113,7 @@ const container = window !== undefined ? () => window().document.body : undefine
         </Drawer>
       </Box>
       <Box
+        className="main"
         component="main"
         sx={{ flexGrow: 1, bgcolor: '#224b54', padding:2}}
       >

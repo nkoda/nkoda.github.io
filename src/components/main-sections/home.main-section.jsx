@@ -41,14 +41,14 @@ const HomeSection = () => {
             translateZ: 0,
             opacity: [0,1],
             easing: "easeOutExpo",
-            duration: 3000,
+            duration: 1500,
             delay: (el, i) => 500 + 30 * i
         }).add({
             targets: '.ml12 .letter',
             translateX: [0,-30],
             opacity: [1,0],
             easing: "easeInExpo",
-            duration: 2500,
+            duration: 1500,
             delay: (el, i) => 100 + 30 * i,
         }).add({
             loopComplete: () => {

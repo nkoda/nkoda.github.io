@@ -1,7 +1,11 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  overflow-x: none;
 }
-
+.App > main{
+  overflow-x: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

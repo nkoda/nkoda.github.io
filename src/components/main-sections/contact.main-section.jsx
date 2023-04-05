@@ -31,7 +31,7 @@ const ContactSection = () => {
 
     const cardStyle = {
       width: '100%',
-      height: cardHeight < 700 ? '50%' : '70%',
+      height: cardHeight < 700 ? '30%' : '90%',
       backgroundColor: '#3e6169',
       color: '#CACACA',
       justifyContent: 'center',
@@ -92,7 +92,7 @@ const ContactSection = () => {
                     </Box>
                   <CardContent>
                     <Typography gutterBottom variant="h6" component="div" sx={titleStyle}>
-                        Email
+                        Github
                         </Typography>
                         <Typography variant="body2" >
                             Checkout my Github
