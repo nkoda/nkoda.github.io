@@ -81,10 +81,6 @@ const HomeSection = () => {
                             <h2>Innovating tomorrow's world.</h2>
                             <h3>A Full Stack Developer and Data Scientist based in Vancouver, BC.</h3>
                         </div>
-                            <div id="scroll-wrapper">
-                                <div id="scroll-title">Scroll</div>
-                                <div id="scroll-down"></div>
-                            </div>
                         </div>
                         
                     </div>

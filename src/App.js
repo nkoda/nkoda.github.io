@@ -15,6 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
+import BottomNavigation from '@mui/material/BottomNavigation';
 
 
 const drawerWidth = 195;
@@ -111,9 +112,13 @@ const container = window !== undefined ? () => window().document.body : undefine
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: '#224b54'}}
+        sx={{ flexGrow: 1, bgcolor: '#224b54', padding:2}}
       >
         <div ref={homeRef}>
+          <div id="scroll-wrapper" style={{position:'absolute', top:'80%', left:'45%'}}>
+            <div id="scroll-title">Scroll</div>
+            <div id="scroll-down"></div>
+            </div>
           <HomeSection/>
         </div>
         <div ref={resumeRef}>
@@ -121,10 +126,21 @@ const container = window !== undefined ? () => window().document.body : undefine
         </div>
         <div ref={projectsRef}>
           <ProjectsSection/>
-        </div>
         <div ref={contactRef}>
           <ContactSection/>
         </div>
+        </div>
+        <BottomNavigation 
+          sx={{
+            backgroundColor:'#3e6169', 
+            boxShadow:'0px 1px 0px #153237', 
+            color:'white', 
+            justifyContent:'center',
+            }}>
+          <Typography>
+            © Copyright | Nikko Dumrique 2023 All Right Reserved
+          </Typography>
+        </BottomNavigation>
       </Box>
     </Box>
   );

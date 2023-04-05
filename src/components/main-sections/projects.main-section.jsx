@@ -18,8 +18,11 @@ import './css/projects-section.css'
 const ProjectsSection = () => {
     const cardStyle = {
         width: '100%' ,
+        height: 300,
         backgroundColor: '#3e6169',
-        color: "#CACACA"
+        color: "#CACACA",
+        display: 'block',
+        overflow: 'auto'
     }
     const titleStyle = {
         color: 'white',
@@ -32,8 +35,8 @@ const ProjectsSection = () => {
           content={
             <div>
               <h1>Projects</h1>
-              <Grid container spacing={1} sx={{padding:4}}>
-                <Grid item xs={12} sm={6} md={3}>
+              <Grid container spacing={1} sx={{padding:1}}>
+                <Grid item xs={24} sm={6} md={3}>
                   <Card sx={cardStyle}>
                     <CardMedia
                         sx={{ height: 140 }}

@@ -15,7 +15,7 @@ import Link from '@mui/material/Link';
 
 import "./side-bar.css";
 
-const drawerWidth = 240;
+const drawerWidth = 0.15 * Window.innerWidth;
 
 const SideBar = ({ onClickButton })  => {
 

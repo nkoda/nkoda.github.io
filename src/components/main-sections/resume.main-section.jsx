@@ -37,7 +37,6 @@ const ResumeSection = () => {
                             <Typography variant="h3">About Me</Typography>
                             <Typography 
                             sx={{
-                                display: "block",
                                 padding:4,
                                 textAlign:'center',
                                 color:"#CACACA"
@@ -84,9 +83,6 @@ const ResumeSection = () => {
                 <ul>
                 <li><b>University of British Columbia:</b> B.Sc Physics, Minor in Data Science</li>
                 </ul>
-
-            </Grid>
-            <Grid item xs={12}>
             </Grid>
         </Grid>
     )
