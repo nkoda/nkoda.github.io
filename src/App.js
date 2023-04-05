@@ -8,17 +8,29 @@ import ResumeSection from './components/main-sections/resume.main-section';
 import ProjectsSection from './components/main-sections/projects.main-section';
 import ContactSection from './components/main-sections/contact.main-section';
 import React, { useState, useRef, useEffect } from 'react';
-import anime from 'animejs';//TODO
+
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
+import Drawer from '@mui/material/Drawer';
+
 
 const drawerWidth = 195;
 
-function App() {
+function App({ window }) {
   const homeRef = useRef(null);
   const resumeRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
 
   const handleNavClick = (state) => {
     switch(state) {
@@ -39,15 +51,64 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    console.log(windowWidth)
-  }, [windowWidth])
 
+const container = window !== undefined ? () => window().document.body : undefined;
   return (
     <Box sx={{display: 'flex'}}>
       <CssBaseline />
-      {windowWidth >= 900 && <Sidebar onClickButton={handleNavClick} />}
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: 'transparent',
+          boxShadow: 'none',
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
+      >
+        <Toolbar sx={{flex: 1, marginLeft:'auto' }}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none'}}}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          <Sidebar onClickButton={handleNavClick} />
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+          open
+        >
+          <Sidebar onClickButton={handleNavClick} />
+        </Drawer>
+      </Box>
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: '#224b54'}}
