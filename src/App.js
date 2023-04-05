@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import BottomNavigation from '@mui/material/BottomNavigation';
+import Grid from '@mui/material/Grid';
 
 
 const drawerWidth = 195;
@@ -114,22 +115,32 @@ const container = window !== undefined ? () => window().document.body : undefine
         component="main"
         sx={{ flexGrow: 1, bgcolor: '#224b54', padding:2}}
       >
-        <div ref={homeRef}>
-          <div id="scroll-wrapper" style={{position:'absolute', top:'80%', left:'45%'}}>
-            <div id="scroll-title">Scroll</div>
-            <div id="scroll-down"></div>
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <div ref={homeRef}>
+              <div id="scroll-wrapper" style={{position:'absolute', top:'80%', left:'45%'}}>
+                <div id="scroll-title">Scroll</div>
+                <div id="scroll-down"></div>
+              </div>
+              <HomeSection/>
             </div>
-          <HomeSection/>
-        </div>
-        <div ref={resumeRef}>
-          <ResumeSection/>
-        </div>
-        <div ref={projectsRef}>
-          <ProjectsSection/>
-        <div ref={contactRef}>
-          <ContactSection/>
-        </div>
-        </div>
+          </Grid>
+          <Grid item xs={12}>
+            <div ref={resumeRef}>
+              <ResumeSection/>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <div ref={projectsRef}>
+              <ProjectsSection/>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <div ref={contactRef}>
+              <ContactSection/>
+            </div>
+          </Grid>
+        </Grid>
         <BottomNavigation 
           sx={{
             backgroundColor:'#3e6169', 

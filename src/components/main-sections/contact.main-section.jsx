@@ -32,13 +32,13 @@ const ContactSection = () => {
         alignItems:'center'
     }
     return (
-      <div>
+      <div >
         <MainSection
           id='Links'
           content={
             <div>
-              <h1>Links</h1>
-              <Grid container spacing={4} sx={{padding:4, justifyContent:'center', display:'flex', paddingLeft:5}}>
+                <h1>Links</h1>
+              <Grid container spacing={4} sx={{padding:4, justifyContent:'center', display:'flex'}}>
                 <Grid item xs={12} sm={6} md={3}>
                     <Link href='https://www.linkedin.com/in/nikkodumrique/' target="_blank" rel="noopener">
                         <Card sx={cardStyle}>
