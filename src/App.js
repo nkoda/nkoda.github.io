@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import Grid from '@mui/material/Grid';
+import Divider from '@mui/material/Divider';
 
 
 const drawerWidth = 195;
@@ -143,6 +144,7 @@ const container = window !== undefined ? () => window().document.body : undefine
         </Grid>
         <BottomNavigation 
           sx={{
+            width:'100%',
             backgroundColor:'#3e6169', 
             boxShadow:'0px 1px 0px #153237', 
             color:'white', 

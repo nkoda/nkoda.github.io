@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MainSection from "./main-sections.component";
 import Divider from '@mui/material/Divider';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -17,15 +17,26 @@ import Box from '@mui/material/Box';
 
 
 const ContactSection = () => {
-    
+    const [cardHeight, setCardHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setCardHeight(window.innerHeight);
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const cardStyle = {
-        width: '100%' ,
-        height:'100%',
-        backgroundColor: '#3e6169',
-        color: "#CACACA",
-        justifyContent:'center',
-        textAlign:'center'
-    }
+      width: '100%',
+      height: cardHeight < 700 ? '50%' : '70%',
+      backgroundColor: '#3e6169',
+      color: '#CACACA',
+      justifyContent: 'center',
+      textAlign: 'center',
+    };
     const titleStyle = {
         color: 'white',
         fontWeight: 700,

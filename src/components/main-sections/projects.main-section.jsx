@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import MainSection from "./main-sections.component";
 import './css/projects-section.css';
 import Card from '@mui/material/Card';
@@ -16,14 +16,27 @@ import './css/projects-section.css'
 
 
 const ProjectsSection = () => {
-    const cardStyle = {
-        width: '100%' ,
-        height: 300,
-        backgroundColor: '#3e6169',
-        color: "#CACACA",
-        display: 'block',
-        overflow: 'auto'
-    }
+  const [cardHeight, setCardHeight] = useState(window.innerHeight);
+  const [isCardClicked, setIsCardClicked] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setCardHeight(window.innerHeight);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const handleClick = () => {
+    setIsCardClicked(!isCardClicked);
+  }
+
+  const cardStyle = {
+    width: '100%',
+    height: cardHeight < 700 ? 100 : 300,
+    backgroundColor: '#3e6169',
+    color: '#CACACA',
+    display: 'block',
+    overflow: 'auto'
+  };
     const titleStyle = {
         color: 'white',
         fontWeight: 700
@@ -39,7 +52,7 @@ const ProjectsSection = () => {
                 <Grid item xs={24} sm={6} md={3}>
                   <Card sx={cardStyle}>
                     <CardMedia
-                        sx={{ height: 140 }}
+                        sx={{ height: 100 }}
                         image={img_atlas}
                     />
                     <CardContent>
@@ -65,7 +78,7 @@ const ProjectsSection = () => {
                 <Grid item xs={12} sm={6} md={3}>
                   <Card sx={cardStyle}>
                   <CardMedia
-                        sx={{ height: 140 }}
+                        sx={{ height: 100 }}
                         image={img_twitterReporterApi}
                     />
                   <CardContent>
@@ -87,7 +100,7 @@ const ProjectsSection = () => {
                 <Grid item xs={12} sm={6} md={3}>
                   <Card sx={cardStyle}>
                   <CardMedia
-                        sx={{ height: 140 }}
+                        sx={{ height: 100 }}
                         image={img_museums}
                     />
                   <CardContent>
@@ -109,7 +122,7 @@ const ProjectsSection = () => {
                 <Grid item xs={12} sm={6} md={3}>
                   <Card sx={cardStyle}>
                   <CardMedia
-                        sx={{ height: 140 }}
+                        sx={{ height: 100 }}
                         image={img_3DMetabolism}
                     />
                   <CardContent>
