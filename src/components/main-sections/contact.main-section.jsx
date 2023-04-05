@@ -39,14 +39,14 @@ const ContactSection = () => {
             <div>
                 <h1>Links</h1>
               <Grid container spacing={4} sx={{padding:4, justifyContent:'center', display:'flex'}}>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={8} sm={6} md={3}>
                     <Link href='https://www.linkedin.com/in/nikkodumrique/' target="_blank" rel="noopener">
                         <Card sx={cardStyle}>
-                            <Box sx={{padding:5}}>
+                            <Box sx={{padding:2}}>
                                 <LinkedInIcon fontSize="large"/>
                             </Box>
                         <CardContent>    
-                            <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
+                            <Typography gutterBottom variant="h6" component="div" sx={titleStyle}>
                                 Linkedin
                                 </Typography>
                                 <Typography variant="body2" >
@@ -56,14 +56,14 @@ const ContactSection = () => {
                         </Card>
                     </Link>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={8} sm={6} md={3}>
                 <Link href='mailto:dumriquenikko@gmail.com' target="_blank" rel="noopener">
                   <Card sx={cardStyle}>
-                    <Box sx={{padding:5}}>
-                                <EmailIcon fontSize="large"/>
+                    <Box sx={{padding:2}}>
+                        <EmailIcon fontSize="large"/>
                     </Box>
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
+                    <Typography gutterBottom variant="h6" component="div" sx={titleStyle}>
                         Email
                         </Typography>
                         <Typography variant="body2" >
@@ -73,14 +73,14 @@ const ContactSection = () => {
                   </Card>
                   </Link>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={8} sm={6} md={3}>
                 <Link href='https://github.com/nkoda' target="_blank" rel="noopener">
                   <Card sx={cardStyle}>
-                    <Box sx={{padding:5}}>
-                                <GitHubIcon fontSize="large"/>
+                    <Box sx={{padding:2}}>
+                        <GitHubIcon fontSize="large"/>
                     </Box>
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
+                    <Typography gutterBottom variant="h6" component="div" sx={titleStyle}>
                         Email
                         </Typography>
                         <Typography variant="body2" >
