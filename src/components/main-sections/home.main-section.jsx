@@ -31,7 +31,7 @@ const HomeSection = () => {
       ];
       
 
-    const [greeting, setGreeting] = useState(welcomeMessages[0]);
+    const [greeting, setGreeting] = useState(welcomeMessages[1]);
     const [index, setIndex] = useState(0)
 
       function incrementMessage() { // min and max included 
@@ -44,7 +44,7 @@ const HomeSection = () => {
       }
 
     useEffect(() => {
-        // This animation was borrowed from https://tobiasahlin.com/moving-letters/#12
+        // This animation was inspired by https://tobiasahlin.com/moving-letters/#12
         var textWrapper = document.querySelector('.ml12');
         textWrapper.innerHTML = textWrapper.textContent.split(/\s/)
         .map((word) => {
