@@ -14,14 +14,36 @@ import './css/main-section.css';
 
 const HomeSection = () => {
     const welcomeMessages = [
-        "Welcome to my Website",
-        "Bienvenue sur mon site web", // French
-        "Bienvenue sur mon site web", // French
-        "Willkommen auf meiner Website", // German
-        "私のウェブサイトへようこそ", // Japanese
-        "Welcome to my Website",
-        "欢迎来到我的网站" // Mandarin
-    ]
+        "Bringing Your Ideas to Life", // English
+        "Donner vie à vos idées", // French
+        "Bringing Your Ideas to Life", // English
+        "将你的想法变成现实", // Mandarin
+        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
+        "Bringing Your Ideas to Life", // English
+        "あなたのアイデアを実現する", // Japanese
+        "Donner vie à vos idées", // French
+        "将你的想法变成现实", // Mandarin
+        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
+        "Bringing Your Ideas to Life", // English
+        "Donner vie à vos idées", // French
+        "将你的想法变成现实", // Mandarin
+        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
+        "Bringing Your Ideas to Life", // English
+        "あなたのアイデアを実現する", // Japanese
+        "将你的想法变成现实", // Mandarin
+        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
+        "Donner vie à vos idées", // French
+        "Bringing Your Ideas to Life", // English
+        "将你的想法变成现实", // Mandarin
+        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
+        "あなたのアイデアを実現する", // Japanese
+        "Donner vie à vos idées", // French
+        "Bringing Your Ideas to Life", // English
+        "将你的想法变成现实", // Mandarin
+        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
+        "あなたのアイデアを実現する" // Japanese
+      ];
+      
 
     const [greeting, setGreeting] = useState(welcomeMessages[0]);
 
@@ -41,14 +63,14 @@ const HomeSection = () => {
             translateZ: 0,
             opacity: [0,1],
             easing: "easeOutExpo",
-            duration: 1500,
+            duration: 1000,
             delay: (el, i) => 500 + 30 * i
         }).add({
             targets: '.ml12 .letter',
             translateX: [0,-30],
             opacity: [1,0],
             easing: "easeInExpo",
-            duration: 1500,
+            duration: 1000,
             delay: (el, i) => 100 + 30 * i,
         }).add({
             loopComplete: () => {
@@ -78,7 +100,7 @@ const HomeSection = () => {
                         <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
                         <Divider sx={{ borderBottomWidth: 2, background:"white" }} ></Divider>
                         <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-                            <h2>Innovating tomorrow's world.</h2>
+                            <h2>Turning data into value with full-stack expertise.</h2>
                             <h3>A Full Stack Developer and Data Scientist based in Vancouver, BC.</h3>
                         </div>
                         </div>

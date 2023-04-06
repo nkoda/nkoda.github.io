@@ -41,12 +41,12 @@ const ResumeSection = () => {
                                 textAlign:'center',
                                 color:"#CACACA"
                                 }}>
-                                    I’m a recent physics and data science graduate from the 
-                                    University of British Columbia seeking new grad opportunities. 
-                                    I’m a data science enthusiast with 2 years of experience in full-stack software development 
-                                    at UBC’s Emerging Media Lab, where I led the development of educational web-based and 
-                                    virtual-reality projects as a junior developer. Specialized in Python and Javascript, 
-                                    experienced in React.js, Express.js ETL, SQL, NoSQL, and machine learning concepts.
+                                    I’m a recent physics and data science graduate from 
+                                    the University of British Columbia <b>seeking new opportunities</b>. 
+                                    I’m a data science enthusiast with <b>2 years of experience </b> in <b>full-stack</b> software development 
+                                    and <b>data engineering</b> at UBC’s Emerging Media Lab, where I led the development of educational web-based and 
+                                    virtual-reality projects as a junior developer. Specialized in <b>Python</b>, <b>C#</b> and <b>Javascript</b>, 
+                                    experienced in <b>React.js</b>, <b>Express.js</b> <b>ETL</b>, <b>SQL</b>, <b>NoSQL</b>, and <b>machine learning</b> concepts.
                                     Outside of my work I enjoy skiing, cooking, and travelling the world. 
                             </Typography>
                         </div>
