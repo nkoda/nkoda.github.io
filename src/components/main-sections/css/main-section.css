@@ -2,7 +2,8 @@
 .ml12 {
     position: relative;
     font-weight: 900;
-    font-size: 4em;
+    font-size: 3em;
+    /* white-space: nowrap; */
   }
   
   .ml12 .text-wrapper {

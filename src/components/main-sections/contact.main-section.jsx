@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 
 const ContactSection = () => {
@@ -49,8 +50,8 @@ const ContactSection = () => {
           content={
             <div>
                 <h1>Links</h1>
-              <Grid container spacing={4} sx={{padding:4, justifyContent:'center', display:'flex'}}>
-                <Grid item xs={8} sm={6} md={3}>
+              <Grid container spacing={2} sx={{justifyContent:'center', display:'flex'}}>
+                <Grid item xs={6} sm={3} md={3}>
                     <Link href='https://www.linkedin.com/in/nikkodumrique/' target="_blank" rel="noopener">
                         <Card sx={cardStyle}>
                             <Box sx={{padding:2}}>
@@ -67,7 +68,7 @@ const ContactSection = () => {
                         </Card>
                     </Link>
                 </Grid>
-                <Grid item xs={8} sm={6} md={3}>
+                <Grid item xs={6} sm={3} md={3}>
                 <Link href='mailto:dumriquenikko@gmail.com' target="_blank" rel="noopener">
                   <Card sx={cardStyle}>
                     <Box sx={{padding:2}}>
@@ -84,7 +85,7 @@ const ContactSection = () => {
                   </Card>
                   </Link>
                 </Grid>
-                <Grid item xs={8} sm={6} md={3}>
+              <Grid item xs={6} sm={3} md={3}>
                 <Link href='https://github.com/nkoda' target="_blank" rel="noopener">
                   <Card sx={cardStyle}>
                     <Box sx={{padding:2}}>
@@ -95,7 +96,24 @@ const ContactSection = () => {
                         Github
                         </Typography>
                         <Typography variant="body2" >
-                            Checkout my Github
+                            Checkout my Github!
+                        </Typography>
+                    </CardContent>
+                  </Card>
+                  </Link>
+                </Grid>
+              <Grid item xs={6} sm={3} md={3}>
+                <Link href='https://drive.google.com/file/d/1ozDNoW-gw0VWg-MWsA0DIVptMur8mc5g/view?usp=sharing' target="_blank" rel="noopener">
+                  <Card sx={cardStyle}>
+                    <Box sx={{padding:2}}>
+                        <AssignmentIndIcon fontSize="large"/>
+                    </Box>
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="div" sx={titleStyle}>
+                        Resume
+                        </Typography>
+                        <Typography variant="body2" >
+                            Read my Resume!
                         </Typography>
                     </CardContent>
                   </Card>

@@ -13,6 +13,7 @@ import img_twitterReporterApi from '../../assets/twitter_reporter_api.png';
 import img_atlas from '../../assets/atlas.png';
 
 import './css/projects-section.css'
+import { Divider } from "@mui/material";
 
 
 const ProjectsSection = () => {
@@ -30,12 +31,12 @@ const ProjectsSection = () => {
   }
 
   const cardStyle = {
-    width: '100%',
-    height: cardHeight < 700 ? 100 : 300,
+    height: cardHeight < 700 ? 250 : 250,
     backgroundColor: '#3e6169',
     color: '#CACACA',
     display: 'block',
-    overflow: 'auto'
+    overflow: 'auto',
+    whiteSpace: 'normal' ,
   };
     const titleStyle = {
         color: 'white',
@@ -48,8 +49,8 @@ const ProjectsSection = () => {
           content={
             <div>
               <h1>Projects</h1>
-              <Grid container spacing={1} sx={{padding:1}}>
-                <Grid item xs={24} sm={6} md={3}>
+              <Grid container spacing={2} sx={{justifyContent:'center'}}>
+                <Grid item xs={6} sm={6} md={3}>
                   <Card sx={cardStyle}>
                     <CardMedia
                         sx={{ height: 100 }}
@@ -75,7 +76,7 @@ const ProjectsSection = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={6} sm={6} md={3}>
                   <Card sx={cardStyle}>
                   <CardMedia
                         sx={{ height: 100 }}
@@ -97,7 +98,7 @@ const ProjectsSection = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={6} sm={6} md={3}>
                   <Card sx={cardStyle}>
                   <CardMedia
                         sx={{ height: 100 }}
@@ -119,7 +120,7 @@ const ProjectsSection = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={6} sm={6} md={3}>
                   <Card sx={cardStyle}>
                   <CardMedia
                         sx={{ height: 100 }}

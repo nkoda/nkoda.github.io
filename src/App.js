@@ -69,7 +69,7 @@ const container = window !== undefined ? () => window().document.body : undefine
         }}
       >
         <Toolbar sx={{flex: 1, marginLeft:'auto' }}>
-          <IconButton
+          {/* <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
@@ -77,7 +77,7 @@ const container = window !== undefined ? () => window().document.body : undefine
             sx={{ mr: 2, display: { sm: 'none'}}}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
       <Box
@@ -117,7 +117,7 @@ const container = window !== undefined ? () => window().document.body : undefine
         component="main"
         sx={{ flexGrow: 1, bgcolor: '#224b54', padding:2}}
       >
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{justifyContent:'center'}}>
           <Grid item xs={12}>
             <div ref={homeRef}>
               <div id="scroll-wrapper" style={{position:'absolute', top:'80%', left:'45%'}}>
@@ -139,7 +139,7 @@ const container = window !== undefined ? () => window().document.body : undefine
           </Grid>
           <Grid item xs={12}>
             <div ref={contactRef}>
-              <ContactSection/>
+              <ContactSection />
             </div>
           </Grid>
         </Grid>

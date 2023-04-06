@@ -10,7 +10,7 @@ import './css/resume-section.css';
 
 const ResumeSection = () => {
     return(
-        <Grid container spacing={3} className="resume-section" justifyContent="center">
+        <Grid container spacing={1} className="resume-section" justifyContent="center">
             <Grid item xs={12} md={6} justifyContent="center">
                 <MainSection
                     id='Home'
@@ -52,7 +52,7 @@ const ResumeSection = () => {
                         </div>
                     }/>
             </Grid>
-            <Grid item xs={12} md={6} marginTop={20}>
+            <Grid item xs={12} md={6} >
 
                 <Typography variant="h4">Experience</Typography>
                 <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
