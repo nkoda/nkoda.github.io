@@ -120,11 +120,11 @@ const container = window !== undefined ? () => window().document.body : undefine
         <Grid container spacing={4} sx={{justifyContent:'center'}}>
           <Grid item xs={12}>
             <div ref={homeRef}>
-              <div id="scroll-wrapper" style={{position:'absolute', top:'80%', left:'45%'}}>
+              <HomeSection/>
+              <div id="scroll-wrapper" style={{position:'absolute', top:'90%', left:'45%'}}>
                 <div id="scroll-title">Scroll</div>
                 <div id="scroll-down"></div>
               </div>
-              <HomeSection/>
             </div>
           </Grid>
           <Grid item xs={12}>
