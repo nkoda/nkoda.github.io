@@ -13,7 +13,6 @@ import img_twitterReporterApi from '../../assets/twitter_reporter_api.png';
 import img_atlas from '../../assets/atlas.png';
 
 import './css/projects-section.css'
-import { Divider } from "@mui/material";
 
 
 const ProjectsSection = () => {

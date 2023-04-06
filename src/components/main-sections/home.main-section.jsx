@@ -14,70 +14,68 @@ import './css/main-section.css';
 
 const HomeSection = () => {
     const welcomeMessages = [
-        "Bringing Your Ideas to Life", // English
-        "Donner vie à vos idées", // French
-        "Bringing Your Ideas to Life", // English
-        "将你的想法变成现实", // Mandarin
-        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
-        "Bringing Your Ideas to Life", // English
-        "あなたのアイデアを実現する", // Japanese
-        "Donner vie à vos idées", // French
-        "将你的想法变成现实", // Mandarin
-        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
-        "Bringing Your Ideas to Life", // English
-        "Donner vie à vos idées", // French
-        "将你的想法变成现实", // Mandarin
-        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
-        "Bringing Your Ideas to Life", // English
-        "あなたのアイデアを実現する", // Japanese
-        "将你的想法变成现实", // Mandarin
-        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
-        "Donner vie à vos idées", // French
-        "Bringing Your Ideas to Life", // English
-        "将你的想法变成现实", // Mandarin
-        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
-        "あなたのアイデアを実現する", // Japanese
-        "Donner vie à vos idées", // French
-        "Bringing Your Ideas to Life", // English
-        "将你的想法变成现实", // Mandarin
-        "Magdala ng Buhay sa Iyong mga Ideya", // Tagalog
-        "あなたのアイデアを実現する" // Japanese
+        "Transformez vos idées en logiciel.", // French
+        "Crafting your ideas into software.", // English
+        "Transformez vos idées en logiciel.", // French
+        "Crafting your ideas into software.", // English
+        "将 您 的 想 法 制 作 成 软 件。", // Mandarin
+        "Transformez vos idées en logiciel.", // French
+        "Crafting your ideas into software.", // English
+        "あなた の アイデア を ソフトウェア に 作り上げる。", // Japanese
+        "Gawing software ng iyong ideya.", //Tagalog
+        "将 您 的 想 法 制 作 成 软 件。", // Mandarin
+        "Crafting your ideas into software.", // English
+        "あなた の アイデア を ソフトウェア に 作り上げる。", // Japanese
+        "Transformez vos idées en logiciel.", // French
+        "Crafting your ideas into software.", // English
       ];
       
 
     const [greeting, setGreeting] = useState(welcomeMessages[0]);
+    const [index, setIndex] = useState(0)
 
-      function randomIntFromInterval(min, max) { // min and max included 
-        return Math.floor(Math.random() * (max - min + 1) + min)
+      function incrementMessage() { // min and max included 
+        if (index === welcomeMessages.length) {
+            setIndex(0);
+            
+        } else {
+            setIndex(index + 1);
+        }
       }
 
     useEffect(() => {
         // This animation was borrowed from https://tobiasahlin.com/moving-letters/#12
         var textWrapper = document.querySelector('.ml12');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        textWrapper.innerHTML = textWrapper.textContent.split(/\s/)
+        .map((word) => {
+          return `<span class='word'>${word
+            .split(' ')
+            .map((letter) => `<span class='letter'>${letter}</span>`)
+            .join('')}</span>`;
+        })
+        .join(' ');
 
         anime.timeline({loop: true})
         .add({
-            targets: '.ml12 .letter',
+            targets: '.ml12 .word .letter',
             translateX: [40,0],
             translateZ: 0,
             opacity: [0,1],
-            easing: "easeOutExpo",
-            duration: 1000,
+            easing: "easeInOutElastic(1, .6)",
+            duration: 3000,
             delay: (el, i) => 500 + 30 * i
         }).add({
-            targets: '.ml12 .letter',
+            targets: '.ml12 .word .letter',
             translateX: [0,-30],
             opacity: [1,0],
-            easing: "easeInExpo",
-            duration: 1000,
+            easing: "easeInOutElastic(1, .6)",
+            duration: 2000,
             delay: (el, i) => 100 + 30 * i,
         }).add({
             loopComplete: () => {
-                const num = randomIntFromInterval(0, welcomeMessages.length-1);
-                setGreeting(welcomeMessages[num])
-            },
-            delay: (el, i) => 100 + 30 * i,
+                incrementMessage();
+                setGreeting(welcomeMessages[index])
+            }
         });
     }, [greeting, welcomeMessages]);
     

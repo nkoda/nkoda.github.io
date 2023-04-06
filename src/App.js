@@ -130,6 +130,7 @@ const container = window !== undefined ? () => window().document.body : undefine
           <Grid item xs={12}>
             <div ref={resumeRef}>
               <ResumeSection/>
+              
             </div>
           </Grid>
           <Grid item xs={12}>
