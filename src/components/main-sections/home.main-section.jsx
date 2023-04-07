@@ -16,18 +16,14 @@ const HomeSection = () => {
     const welcomeMessages = [
         "Transformez vos idées en logiciel.", // French
         "Crafting your ideas into software.", // English
-        "Transformez vos idées en logiciel.", // French
-        "Crafting your ideas into software.", // English
         "将 您 的 想 法 制 作 成 软 件。", // Mandarin
-        "Transformez vos idées en logiciel.", // French
-        "Crafting your ideas into software.", // English
         "あなた の アイデア を ソフトウェア に 作り上げる。", // Japanese
         "Gawing software ng iyong ideya.", //Tagalog
-        "将 您 的 想 法 制 作 成 软 件。", // Mandarin
-        "Crafting your ideas into software.", // English
-        "あなた の アイデア を ソフトウェア に 作り上げる。", // Japanese
         "Transformez vos idées en logiciel.", // French
         "Crafting your ideas into software.", // English
+        "将 您 的 想 法 制 作 成 软 件。", // Mandarin
+        "あなた の アイデア を ソフトウェア に 作り上げる。", // Japanese
+        "Gawing software ng iyong ideya.", //Tagalog
       ];
       
 
@@ -62,19 +58,19 @@ const HomeSection = () => {
             translateZ: 0,
             opacity: [0,1],
             easing: "easeInOutElastic(1, .6)",
-            duration: 3000,
-            delay: (el, i) => 500 + 30 * i
+            duration: 2700,
+            // delay: (el, i) => 500 + 30 * i
         }).add({
             targets: '.ml12 .word .letter',
             translateX: [0,-30],
             opacity: [1,0],
             easing: "easeInOutElastic(1, .6)",
-            duration: 2000,
-            delay: (el, i) => 100 + 30 * i,
+            duration: 1000,
+            // delay: (el, i) => 100 + 30 * i,
         }).add({
             loopComplete: () => {
                 incrementMessage();
-                setGreeting(welcomeMessages[index])
+                setGreeting(welcomeMessages[index]);
             }
         });
     }, [greeting, welcomeMessages]);
