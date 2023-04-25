@@ -12,6 +12,7 @@ import img_museums from '../../assets/museums.png';
 import img_twitterReporterApi from '../../assets/twitter_reporter_api.png';
 import img_atlas from '../../assets/atlas.png';
 import img_jupyter from '../../assets/jupyter.webp';
+import img_eit from '../../assets/EIT_project.jpg';
 
 import './css/projects-section.css'
 
@@ -231,6 +232,33 @@ const ProjectsSection = () => {
                         and provided valuable insights into the impact of holidays on COVID-19 cases. Overall, this project enabled
                         me to use R programming language and various libraries to perform exploratory analysis and hypothesis testing
                         on real-world data, thus strengthening my skills in data analysis and <b>visualization</b>.
+                        </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={6} sm={6} md={3}>
+                  <Card sx={cardStyle}>
+                  <CardMedia
+                        sx={{ height: 100 }}
+                        image={img_eit}
+                    />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
+                          Real-time Hand Gesture Recognition
+                        </Typography>
+                        <Typography gutterBottom>August 2021</Typography>
+                        <Typography variant="body2" >
+                        In April 2021, I worked on developing a <b>low-cost</b> hand gesture recognition device 
+                        that measured and <b>classified</b> <b>muscle contractions</b> using machine learning 
+                        <b>clustering algorithms</b> with the goal of making robotic prosthetics more accessible. 
+                        The project involved implementing the code base in <b>Python</b> and <b>C</b>, using several libraries 
+                        such as <b>Pandas</b>, <b>Matplotlib</b>, <b>Scikit-learn</b>, and <b>Serial</b>. I transmitted electrode data from a 
+                        <b>micro-controller</b> to a computer using the <b>UART protocol</b> for classification. The project 
+                        allowed me to apply my skills in machine learning, data analysis, and programming to 
+                        create a real-time hand gesture recognition device that could potentially improve the lives of 
+                        those in need of robotic prosthetics. Overall, this project enabled me to apply my knowledge of 
+                        machine learning and programming to create a low-cost, innovative solution that could make a 
+                        significant impact in the healthcare industry.
                         </Typography>
                     </CardContent>
                   </Card>

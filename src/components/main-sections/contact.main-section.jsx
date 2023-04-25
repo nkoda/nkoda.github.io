@@ -29,7 +29,7 @@ const ContactSection = () => {
 
     const cardStyle = {
       width: '100%',
-      height: cardHeight < 700 ? '30%' : '90%',
+      height: '100%',
       backgroundColor: '#3e6169',
       color: '#CACACA',
       justifyContent: 'center',

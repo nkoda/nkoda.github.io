@@ -11,13 +11,12 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import Grid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 
 
 const drawerWidth = 195;
@@ -29,6 +28,9 @@ function App({ window }) {
   const contactRef = useRef(null);
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -133,7 +135,7 @@ const container = window !== undefined ? () => window().document.body : undefine
               
             </div>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{ height: isMobile ? '200vh' : '80vh' }}>
             <div ref={projectsRef}>
               <ProjectsSection/>
             </div>
