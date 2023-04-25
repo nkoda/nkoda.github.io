@@ -135,7 +135,7 @@ const container = window !== undefined ? () => window().document.body : undefine
               
             </div>
           </Grid>
-          <Grid item xs={12} sx={{ height: isMobile ? '200vh' : '80vh' }}>
+          <Grid item xs={12} sx={{ height: isMobile ? '200vh' : '120vh' }}>
             <div ref={projectsRef}>
               <ProjectsSection/>
             </div>
