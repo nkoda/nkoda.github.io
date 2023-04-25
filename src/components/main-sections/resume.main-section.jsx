@@ -70,9 +70,9 @@ const ResumeSection = () => {
                 <Divider sx={{ borderBottomWidth: 2, background:"white", marginBottom:2 }} ></Divider>
                 <div style={{display:"flex",}}>
                 <ul>
-                    <li style={{display: "block", paddingTop:5}}><b>Languages:</b>  Javascript, Python, C#, Java</li>
+                    <li style={{display: "block", paddingTop:5}}><b>Languages:</b>  Javascript, Python, C#, Java, R, LaTeX</li>
                     <li style={{display: "block", paddingTop:5}}><b>Databases:</b>  Oracle SQL, MongoDB, MySQL</li>
-                    <li style={{display: "block", paddingTop:5}}><b>Frameworks:</b>  React, Node Express.js, Scikit-learn, PyTest, Junit, Pandas</li>
+                    <li style={{display: "block", paddingTop:5}}><b>Frameworks:</b>  React, Node Express.js, TensorFlow, Scikit-Learn, XGBoost, PyTest, Junit, Pandas</li>
                     <li style={{display: "block", paddingTop:5}}><b>Technologies:</b>  Docker, Git, Github, Jupyter, Unity</li>
                     <li style={{display: "block", paddingTop:5}}><b>Concepts:</b>  TDD, OOP, SOLID, Data Processing and Modelling, Data Visualization</li>
                 </ul>
