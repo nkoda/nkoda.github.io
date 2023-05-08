@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.31bb0ae4.css",
-    "main.js": "/static/js/main.637a3c82.js",
+    "main.js": "/static/js/main.0f0d3e31.js",
     "static/js/787.992eefe7.chunk.js": "/static/js/787.992eefe7.chunk.js",
     "static/media/museums.png": "/static/media/museums.06219eda97839f8d2942.png",
     "static/media/EIT_project.jpg": "/static/media/EIT_project.68fa73225abc927e8109.jpg",
     "static/media/3dmetabolism.png": "/static/media/3dmetabolism.6fca7a54b53450c11968.png",
     "static/media/1654182881838.jpg": "/static/media/1654182881838.2cddc079bc0f87f2dbf9.jpg",
+    "static/media/data_pipeline.drawio.svg": "/static/media/data_pipeline.drawio.2b0af29b9c47d96af623819e1d5c0454.svg",
     "static/media/jupyter.webp": "/static/media/jupyter.98fa350cdac17afc79b4.webp",
     "static/media/twitter_reporter_api.png": "/static/media/twitter_reporter_api.a067b0a1ba0414018630.png",
     "static/media/atlas.png": "/static/media/atlas.ec7dd2a53b75cb742920.png",
     "index.html": "/index.html",
     "static/media/logo.svg": "/static/media/logo.194bf7357d909bff2e8c7232f3541165.svg",
     "main.31bb0ae4.css.map": "/static/css/main.31bb0ae4.css.map",
-    "main.637a3c82.js.map": "/static/js/main.637a3c82.js.map",
+    "main.0f0d3e31.js.map": "/static/js/main.0f0d3e31.js.map",
     "787.992eefe7.chunk.js.map": "/static/js/787.992eefe7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31bb0ae4.css",
-    "static/js/main.637a3c82.js"
+    "static/js/main.0f0d3e31.js"
   ]
 }
