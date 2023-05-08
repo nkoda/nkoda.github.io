@@ -122,7 +122,7 @@ const ContactSection = () => {
                 </Grid>
               <Grid item xs={6} sm={3} md={3}>
                 <Link 
-                  href='https://drive.google.com/file/d/1ozDNoW-gw0VWg-MWsA0DIVptMur8mc5g/view?usp=sharing' 
+                  href='https://drive.google.com/file/d/1MRkU9bS6or3agbHDOE1lTJFUx7JpWkVY/view?usp=sharing' 
                   target="_blank" 
                   rel="noopener"
                   underline="none"
