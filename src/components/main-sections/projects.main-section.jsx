@@ -13,6 +13,7 @@ import img_twitterReporterApi from '../../assets/twitter_reporter_api.png';
 import img_atlas from '../../assets/atlas.png';
 import img_jupyter from '../../assets/jupyter.webp';
 import img_eit from '../../assets/EIT_project.jpg';
+import img_datapipeline from '../../assets/data_pipeline.drawio.svg'
 
 import './css/projects-section.css'
 
@@ -51,6 +52,31 @@ const ProjectsSection = () => {
             <div>
               <h1>Projects</h1>
               <Grid container spacing={2} sx={{justifyContent:'center'}}>
+                <Grid item xs={6} sm={6} md={3}>
+                  <Card sx={cardStyle}>
+                    <CardMedia
+                        sx={{ height: 100 }}
+                        image={img_datapipeline}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div" sx={titleStyle}>
+                                    Financial Data Pipeline
+                        </Typography>
+                        <Typography gutterBottom>May 2023</Typography>
+                        <Typography variant="body2" >
+                        As a Data Engineer, I developed an end-to-end financial data pipeline 
+                        to predict trading volume of equities using historical data. The pipeline utilized <b>LightGBM</b> to 
+                        train a regression model on the transformed data. To improve pipeline 
+                        execution time, I used <b>threadpools</b> for parallelizing data ingestion and transformation.
+                         The pipeline was containerized using <b>Docker</b> and deployed as 
+                         an <b>Apache Airflow</b> workflow with the trained model exposed as a <b>Flask API</b> on Render.
+                          The project's end-to-end implementation achieved 47% faster pipeline execution time compared 
+                          to its original implementation.
+                        </Typography>
+
+                    </CardContent>
+                  </Card>
+                </Grid>
                 <Grid item xs={6} sm={6} md={3}>
                   <Card sx={cardStyle}>
                     <CardMedia
@@ -171,8 +197,8 @@ const ProjectsSection = () => {
                         As a Data Scientist, I conducted an investigation into the dependencies of Intel Corporation's 
                         stock price on various supply chain features. To do this, I used a range of packages necessary 
                         for <b>exploratory analysis</b>, including <b>tidyverse</b>, <b>datateachr</b>, <b>infer</b>, <b>dplyr</b>, 
-                        <b>lubridate</b>, among others. I extracted data from multiple sources, <b>cleaned</b> and <b>transformed</b> 
-                        the data using <b>R</b> programming language,
+                        <b>lubridate</b>, among others. I extracted data from multiple sources, <b>cleaned</b> and <b>transformed</b>  the 
+                        data using <b>R</b> programming language,
                         and performed <b>Exploratory</b> <b>Data</b> <b>Analysis</b> (EDA) to gain insights into the relationships between the supply
                         chain features and the stock price. I also applied machine learning <b>regularization</b> <b>techniques</b>, particularly 
                         the <b>LASSO</b> method, to perform feature selection and enhance the <b>Multiple</b> <b>Linear</b> <b>Regression</b> (MLR) model's 
