@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Sidebar from './components/side-bar/side-bar.component';
 import Box from '@mui/material/Box';
@@ -7,7 +6,7 @@ import HomeSection from './components/main-sections/home.main-section';
 import ResumeSection from './components/main-sections/resume.main-section';
 import ProjectsSection from './components/main-sections/projects.main-section';
 import ContactSection from './components/main-sections/contact.main-section';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -29,7 +28,7 @@ function App({ window }) {
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
 
   const handleDrawerToggle = () => {
@@ -71,15 +70,6 @@ const container = window !== undefined ? () => window().document.body : undefine
         }}
       >
         <Toolbar sx={{flex: 1, marginLeft:'auto' }}>
-          {/* <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none'}}}
-          >
-            <MenuIcon />
-          </IconButton> */}
         </Toolbar>
       </AppBar>
       <Box
@@ -135,7 +125,7 @@ const container = window !== undefined ? () => window().document.body : undefine
               
             </div>
           </Grid>
-          <Grid item xs={12} sx={{ height: isMobile ? '200vh' : '120vh' }}>
+          <Grid item xs={12} sx={{ height: isMobile ? '200vh' : '130vh' }}>
             <div ref={projectsRef}>
               <ProjectsSection/>
             </div>

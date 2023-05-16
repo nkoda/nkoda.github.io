@@ -3,12 +3,11 @@ import MainSection from "./main-sections.component";
 import Divider from '@mui/material/Divider';
 import { Avatar, Grid, Typography } from '@mui/material';
 import img_avatar from '../../assets/1654182881838.jpg'
-import Toolbar from '@mui/material/Toolbar';
-import Card from '@mui/material/Card';
 
 import './css/resume-section.css';
 
 const ResumeSection = () => {
+
     return(
         <Grid container spacing={1} className="resume-section" justifyContent="center">
             <Grid item xs={12} md={6} justifyContent="center">
