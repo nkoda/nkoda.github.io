@@ -1,153 +1,143 @@
 import './App.css';
-import Sidebar from './components/side-bar/side-bar.component';
+import React, { useState, useEffect, useCallback } from 'react';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import HomeSection from './components/main-sections/home.main-section';
-import ResumeSection from './components/main-sections/resume.main-section';
-import ProjectsSection from './components/main-sections/projects.main-section';
-import ContactSection from './components/main-sections/contact.main-section';
-import React, { useRef } from 'react';
-
+import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Drawer from '@mui/material/Drawer';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
+import DataLinesBackground from './components/background/data-lines-background';
+import SideBar, { navItems } from './components/side-bar/side-bar.component';
+import HomeSection from './components/main-sections/home.main-section';
+import AboutSection from './components/main-sections/about.main-section';
+import ExperienceSection from './components/main-sections/experience.main-section';
+import SkillsSection from './components/main-sections/skills.main-section';
+import ProjectsSection from './components/main-sections/projects.main-section';
+import ContactSection from './components/main-sections/contact.main-section';
+import { palette } from './theme';
 
-const drawerWidth = 195;
+const drawerWidth = 244;
 
-function App({ window }) {
-  const homeRef = useRef(null);
-  const resumeRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
-
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+function App() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [active, setActive] = useState('home');
 
+  const handleNavigate = useCallback((id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setMobileOpen(false);
+  }, []);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  // Scroll-spy: highlight the section currently in view.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+    navItems.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
-
-  const handleNavClick = (state) => {
-    switch(state) {
-      case 'home':
-        homeRef.current.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'resume':
-        resumeRef.current.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'projects':
-        projectsRef.current.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'contact':
-        contactRef.current.scrollIntoView({ behavior: 'smooth' });
-        break;
-      default:
-        break;
-    }
-  };
-
-
-const container = window !== undefined ? () => window().document.body : undefined;
   return (
-    <Box sx={{display: 'flex'}}>
-      <CssBaseline />
+    <Box sx={{ display: 'flex', minHeight: '100vh', position: 'relative' }}>
+      <DataLinesBackground />
+
+      {/* Mobile top bar */}
       <AppBar
         position="fixed"
+        elevation={0}
         sx={{
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          display: { md: 'none' },
+          background: 'rgba(8, 12, 17, 0.8)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: `1px solid ${palette.border}`,
+          zIndex: (t) => t.zIndex.drawer + 1,
         }}
       >
-        <Toolbar sx={{flex: 1, marginLeft:'auto' }}>
+        <Toolbar>
+          <IconButton
+            edge="start"
+            onClick={() => setMobileOpen(true)}
+            sx={{ color: palette.textPrimary, mr: 1.5 }}
+            aria-label="open navigation"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            sx={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 600,
+              color: palette.textPrimary,
+            }}
+          >
+            Nikko Dumrique
+          </Typography>
         </Toolbar>
       </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          <Sidebar onClickButton={handleNavClick} />
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          <Sidebar onClickButton={handleNavClick} />
-        </Drawer>
+
+      {/* Navigation */}
+      <Box component="nav" sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}>
+        {isDesktop ? (
+          <Drawer
+            variant="permanent"
+            open
+            PaperProps={{
+              sx: {
+                width: drawerWidth,
+                border: 'none',
+                background: 'transparent',
+              },
+            }}
+            sx={{ display: { xs: 'none', md: 'block' } }}
+          >
+            <SideBar onNavigate={handleNavigate} active={active} />
+          </Drawer>
+        ) : (
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onClose={() => setMobileOpen(false)}
+            ModalProps={{ keepMounted: true }}
+            PaperProps={{
+              sx: { width: drawerWidth, border: 'none', background: palette.bg },
+            }}
+            sx={{ display: { xs: 'block', md: 'none' } }}
+          >
+            <SideBar onNavigate={handleNavigate} active={active} />
+          </Drawer>
+        )}
       </Box>
+
+      {/* Main content */}
       <Box
-        className="main"
         component="main"
-        sx={{ flexGrow: 1, bgcolor: '#224b54', padding:2}}
+        sx={{
+          flexGrow: 1,
+          position: 'relative',
+          zIndex: 1,
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          pt: { xs: 7, md: 0 },
+        }}
       >
-        <Grid container spacing={4} sx={{justifyContent:'center'}}>
-          <Grid item xs={12}>
-            <div ref={homeRef}>
-              <HomeSection/>
-              <div id="scroll-wrapper" style={{position:'absolute', top:'90%', left:'45%'}}>
-                <div id="scroll-title">Scroll</div>
-                <div id="scroll-down"></div>
-              </div>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div ref={resumeRef}>
-              <ResumeSection/>
-              
-            </div>
-          </Grid>
-          <Grid item xs={12} sx={{ height: isMobile ? '200vh' : '130vh' }}>
-            <div ref={projectsRef}>
-              <ProjectsSection/>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div ref={contactRef}>
-              <ContactSection />
-            </div>
-          </Grid>
-        </Grid>
-        <BottomNavigation 
-          sx={{
-            width:'100%',
-            backgroundColor:'#3e6169', 
-            boxShadow:'0px 1px 0px #153237', 
-            color:'white', 
-            justifyContent:'center',
-            }}>
-          <Typography>
-            © Copyright | Nikko Dumrique 2023 All Right Reserved
-          </Typography>
-        </BottomNavigation>
+        <HomeSection onNavigate={handleNavigate} />
+        <AboutSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
       </Box>
     </Box>
   );

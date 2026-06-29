@@ -1,87 +1,164 @@
-import Drawer from '@mui/material/Drawer';
+import React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText'
-import ListItem from '@mui/material/ListItem';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
-import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
-import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import SideBarButton from './side-bar-button.component';
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
-import Link from '@mui/material/Link';
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import { palette } from '../../theme';
+import { RESUME_URL } from '../../data';
 
-import "./side-bar.css";
+export const navItems = [
+  { id: 'home', label: 'Home', icon: <HomeOutlinedIcon fontSize="small" /> },
+  { id: 'about', label: 'About', icon: <PersonOutlineOutlinedIcon fontSize="small" /> },
+  { id: 'experience', label: 'Experience', icon: <WorkOutlineOutlinedIcon fontSize="small" /> },
+  { id: 'skills', label: 'Skills', icon: <CodeOutlinedIcon fontSize="small" /> },
+  { id: 'projects', label: 'Projects', icon: <FolderOutlinedIcon fontSize="small" /> },
+  { id: 'contact', label: 'Contact', icon: <MailOutlineIcon fontSize="small" /> },
+];
 
-const drawerWidth = 0.15 * Window.innerWidth;
-
-const SideBar = ({ onClickButton })  => {
-
-  const handleState = (state) => {
-    onClickButton(state);
-  }
-
+const SideBar = ({ onNavigate, active }) => {
   return (
-    <Drawer
-    sx={{
-      width: drawerWidth,
-      flexShrink: 0,
-      '& .MuiDrawer-paper': {
-        width: drawerWidth,
-        boxSizing: 'border-box',
-      },
-    }}
-    variant="permanent"
-    anchor="left"
-  >
-    <h2 className="logo" style={{color: '#224b54'}}>Nikko Angelo</h2>
-    <Divider />
-    <List
-      sx = {{    
+    <Box
+      sx={{
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
+        px: 2.5,
+        py: 3,
+        background: 'rgba(8, 12, 17, 0.72)',
+        backdropFilter: 'blur(14px)',
+        WebkitBackdropFilter: 'blur(14px)',
+        borderRight: { md: `1px solid ${palette.border}` },
       }}
     >
-      <SideBarButton
-        icon={<CottageOutlinedIcon/>}
-        label='Home'
-        onClick={() => {handleState('home')}}
-      ></SideBarButton>
-      <SideBarButton
-        icon={<WorkOutlineOutlinedIcon/>}
-        label='About'
-        onClick={() => {handleState('resume')}}
-      ></SideBarButton>
-      <SideBarButton
-        icon={<EngineeringOutlinedIcon/>}
-        label='Projects'
-        onClick={() => {handleState('projects')}}
-      ></SideBarButton>
-      <SideBarButton
-        icon={<ForumOutlinedIcon/>}
-        label='Links'
-        onClick={() => {handleState('contact')}}
-      ></SideBarButton>
-      <Link 
-        href='https://drive.google.com/file/d/1MRkU9bS6or3agbHDOE1lTJFUx7JpWkVY/view?usp=sharing' 
-        target="_blank" 
-        rel="noopener"
-        underline="none"
+      {/* Logo / identity */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 4, px: 0.5 }}>
+        <Box
+          sx={{
+            width: 44,
+            height: 44,
+            borderRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 700,
+            fontSize: 18,
+            color: '#06231a',
+            background: `linear-gradient(140deg, ${palette.accent}, ${palette.accentDeep})`,
+            boxShadow: `0 8px 22px -8px ${palette.accentGlow}`,
+          }}
         >
-        <Divider />
-        <SideBarButton
-          icon={<AssignmentIndIcon/>}
-          label='Resume'
-        ></SideBarButton>
-      </Link>
-    </List>
-  </Drawer>
+          ND
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 600,
+              color: palette.textPrimary,
+              fontSize: 16,
+              lineHeight: 1.1,
+            }}
+          >
+            Nikko Dumrique
+          </Typography>
+          <Typography sx={{ color: palette.textMuted, fontSize: 11.5 }}>
+            Backend &amp; AI Engineer
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* Nav */}
+      <Box component="nav" sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+        {navItems.map((item) => {
+          const isActive = active === item.id;
+          return (
+            <Box
+              key={item.id}
+              onClick={() => onNavigate(item.id)}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1.5,
+                px: 1.5,
+                py: 1.15,
+                borderRadius: '10px',
+                cursor: 'pointer',
+                position: 'relative',
+                color: isActive ? palette.accent : palette.textSecondary,
+                background: isActive ? 'rgba(52, 211, 153, 0.08)' : 'transparent',
+                transition: 'all 0.2s ease',
+                '&:hover': {
+                  color: palette.accent,
+                  background: 'rgba(52, 211, 153, 0.06)',
+                },
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: 3,
+                  height: isActive ? 20 : 0,
+                  borderRadius: 3,
+                  background: palette.accent,
+                  transition: 'height 0.2s ease',
+                },
+              }}
+            >
+              {item.icon}
+              <Typography sx={{ fontSize: 14.5, fontWeight: isActive ? 600 : 500 }}>
+                {item.label}
+              </Typography>
+            </Box>
+          );
+        })}
+      </Box>
+
+      <Box sx={{ flexGrow: 1 }} />
+
+      <Divider sx={{ borderColor: palette.border, mb: 2 }} />
+      <Box sx={{ display: 'flex', gap: 0.5, mb: 1.5 }}>
+        {[
+          { icon: <GitHubIcon fontSize="small" />, href: 'https://github.com/nkoda', label: 'GitHub' },
+          {
+            icon: <LinkedInIcon fontSize="small" />,
+            href: 'https://www.linkedin.com/in/nikkodumrique/',
+            label: 'LinkedIn',
+          },
+          { icon: <MailOutlineIcon fontSize="small" />, href: 'mailto:dumriquenikko@gmail.com', label: 'Email' },
+          { icon: <DescriptionOutlinedIcon fontSize="small" />, href: RESUME_URL, label: 'Resume' },
+        ].map((s) => (
+          <IconButton
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener"
+            aria-label={s.label}
+            size="small"
+            sx={{
+              color: palette.textMuted,
+              '&:hover': { color: palette.accent },
+            }}
+          >
+            {s.icon}
+          </IconButton>
+        ))}
+      </Box>
+      <Typography sx={{ color: palette.textMuted, fontSize: 11 }}>
+        © {new Date().getFullYear()} Nikko Dumrique
+      </Typography>
+    </Box>
   );
-}
+};
 
 export default SideBar;
