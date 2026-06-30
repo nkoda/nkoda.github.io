@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.42a41924.css",
-    "main.js": "/static/js/main.4e5d8776.js",
+    "main.js": "/static/js/main.61aad9f4.js",
     "static/js/787.992eefe7.chunk.js": "/static/js/787.992eefe7.chunk.js",
     "static/media/1654182881838.jpg": "/static/media/1654182881838.765ef44dd048eca7e891.jpg",
     "static/media/EIT_project.jpg": "/static/media/EIT_project.68fa73225abc927e8109.jpg",
@@ -11,11 +11,11 @@
     "static/media/atlas.png": "/static/media/atlas.ec7dd2a53b75cb742920.png",
     "index.html": "/index.html",
     "main.42a41924.css.map": "/static/css/main.42a41924.css.map",
-    "main.4e5d8776.js.map": "/static/js/main.4e5d8776.js.map",
+    "main.61aad9f4.js.map": "/static/js/main.61aad9f4.js.map",
     "787.992eefe7.chunk.js.map": "/static/js/787.992eefe7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42a41924.css",
-    "static/js/main.4e5d8776.js"
+    "static/js/main.61aad9f4.js"
   ]
 }
