@@ -106,7 +106,7 @@ export const Tag = ({ label }) => (
       borderRadius: '8px',
       border: `1px solid ${palette.border}`,
       background: 'rgba(200, 130, 90, 0.07)',
-      whiteSpace: 'nowrap',
+      maxWidth: '100%',
     }}
   >
     {label}

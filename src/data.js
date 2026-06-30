@@ -67,15 +67,36 @@ export const caseStudies = [
   },
   {
     company: 'Responsive Ads',
-    title: 'Serverless Cost & Reliability Overhaul',
+    title: 'Analytics on Lambda@Edge',
     metrics: [
-      { value: '−86%', label: 'support tickets' },
-      { value: '−$7.5K/mo', label: 'infra cost' },
-      { value: '−98%', label: 'image-service cost' },
+      { value: '−$7.5K/mo', label: 'infra cost (−65%)' },
+      { value: '+9%', label: 'faster response' },
     ],
     blurb:
-      'Led a platform-wide error tracking and auto-recovery system and re-architected analytics and image services onto serverless (Lambda@Edge, API Gateway, Cognito, S3) — cutting support tickets 86%, infrastructure cost ~$7,500/mo, and image-processing cost 98% while improving uptime and latency.',
-    tech: ['Lambda@Edge', 'API Gateway', 'Cognito', 'S3', 'CloudWatch'],
+      "Migrated the platform's analytics tracking from EC2 to Lambda@Edge — pushing tracking out to the network edge to improve global presence and response latency while cutting infrastructure cost by ~$7,500/mo (65%).",
+    tech: ['Lambda@Edge', 'CloudFront', 'S3', 'CloudWatch', 'Python'],
+  },
+  {
+    company: 'Responsive Ads',
+    title: 'Serverless Reliability Overhaul',
+    metrics: [
+      { value: 'Blue-green', label: 'zero-downtime deploys' },
+      { value: 'Real-time', label: 'developer alerting' },
+    ],
+    blurb:
+      'Leading a re-architecture of our serverless backend to handle the large-scale usage patterns that began breaking as user capacity grew — introducing blue-green deployments, a structured error framework, and deeper CloudWatch observability so developers are alerted to issues the moment they happen.',
+    tech: ['AWS Lambda', 'Blue-Green Deploys', 'CloudWatch', 'Structured Errors'],
+  },
+  {
+    company: 'Responsive Ads',
+    title: 'Self-Healing Provisioning Service',
+    metrics: [
+      { value: '−98%', label: 'service cost' },
+      { value: '−86%', label: 'support tickets' },
+    ],
+    blurb:
+      "Built an internal, event-driven service with self-healing auto-recovery that provisions and proxies external services, replacing an unreliable third-party dependency — cutting that workload's cost 98%, improving reliability, and reducing engineering support tickets 86%.",
+    tech: ['API Gateway', 'Cognito', 'Lambda', 'S3'],
   },
 ];
 
@@ -104,8 +125,7 @@ export const skillGroups = [
       'AWS Bedrock',
       'Qdrant',
       'Cohere Embed V4',
-      'Retrieval Eval (P@1, MRR)',
-      'Flask / Gunicorn',
+      'Retrieval Eval',
       'LightGBM',
     ],
   },
@@ -117,8 +137,8 @@ export const skillGroups = [
     title: 'Systems',
     items: [
       'Observability',
-      'Error Tracking & Auto-Recovery',
-      'Performance Optimization',
+      'Auto-Recovery',
+      'Performance Tuning',
       'Cost Optimization',
       'System Design',
     ],

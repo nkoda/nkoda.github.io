@@ -131,6 +131,8 @@ function App() {
         component="main"
         sx={{
           flexGrow: 1,
+          minWidth: 0,
+          overflowX: 'hidden',
           position: 'relative',
           zIndex: 1,
           width: { md: `calc(100% - ${drawerWidth}px)` },

@@ -103,7 +103,8 @@ const CaseStudyCard = ({ study }) => (
     <Box
       sx={{
         display: 'flex',
-        gap: 2,
+        flexWrap: 'wrap',
+        gap: 1.5,
         p: { xs: 2.5, md: 3 },
         background:
           'linear-gradient(135deg, rgba(200,130,90,0.10), rgba(20,14,16,0.2)), #1B1316',
@@ -114,14 +115,15 @@ const CaseStudyCard = ({ study }) => (
       }}
     >
       {study.metrics.map((m) => (
-        <Box key={m.label} sx={{ flex: 1, textAlign: 'center' }}>
+        <Box key={m.label} sx={{ flex: '1 1 0', minWidth: 0, textAlign: 'center' }}>
           <Typography
             sx={{
               fontFamily: "'Jost', sans-serif",
               fontWeight: 600,
               color: palette.accent,
-              fontSize: { xs: '1.35rem', md: '1.6rem' },
-              lineHeight: 1.1,
+              fontSize: { xs: '1.15rem', md: '1.35rem' },
+              lineHeight: 1.15,
+              wordBreak: 'break-word',
             }}
           >
             {m.value}

@@ -76,13 +76,14 @@ const AboutSection = React.forwardRef((props, ref) => {
           <Grid container spacing={2} sx={{ mt: 1.5 }}>
             {stats.map((s) => (
               <Grid item xs={6} sm={3} key={s.label}>
-                <GlassCard sx={{ p: 2, textAlign: 'center' }} hover={false}>
+                <GlassCard sx={{ p: 2, textAlign: 'center', minWidth: 0 }} hover={false}>
                   <Typography
                     sx={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontWeight: 700,
-                      fontSize: { xs: '1.35rem', md: '1.6rem' },
+                      fontFamily: "'Jost', sans-serif",
+                      fontWeight: 600,
+                      fontSize: { xs: '1.2rem', md: '1.45rem' },
                       color: palette.accent,
+                      wordBreak: 'break-word',
                     }}
                   >
                     {s.value}
