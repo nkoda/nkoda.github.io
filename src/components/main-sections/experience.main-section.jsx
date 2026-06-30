@@ -144,6 +144,36 @@ const ExperienceSection = React.forwardRef((props, ref) => {
               Sept 2017 — May 2022
             </Typography>
           </Box>
+
+          <Box
+            sx={{ mt: 2.5, pt: 2.5, borderTop: `1px solid ${palette.border}` }}
+          >
+            <Typography
+              className="mono"
+              sx={{
+                color: palette.accentSoft,
+                fontSize: 11.5,
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                mb: 1.5,
+              }}
+            >
+              Relevant Coursework
+            </Typography>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.9 }}>
+              {[
+                'Relational & Non-Relational Database Systems (querying, optimization, data modeling)',
+                'Machine Learning & Data Mining',
+                'Applied Machine Learning',
+                'Advanced Data Analysis & Simulations',
+                'Reproducible Workflows in Data Science',
+                'Data Structures & Algorithms',
+                'Software Construction',
+              ].map((course) => (
+                <Tag key={course} label={course} />
+              ))}
+            </Box>
+          </Box>
         </GlassCard>
       </Box>
     </Section>

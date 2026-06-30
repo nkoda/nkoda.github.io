@@ -102,14 +102,18 @@ const HomeSection = ({ onNavigate }) => {
         I'm a backend engineer based in Vancouver specializing in{' '}
         <Box component="span" sx={{ color: palette.textPrimary, fontWeight: 600 }}>
           cloud infrastructure
-        </Box>{' '}
-        and{' '}
-        <Box component="span" sx={{ color: palette.textPrimary, fontWeight: 600 }}>
-          production AI systems
         </Box>
-        . I build resilient, cost-efficient serverless platforms over 50TB+ data
-        environments and ship LLM / RAG pipelines from retrieval benchmarking
-        through deployment.
+        ,{' '}
+        <Box component="span" sx={{ color: palette.textPrimary, fontWeight: 600 }}>
+          serverless systems
+        </Box>
+        , and{' '}
+        <Box component="span" sx={{ color: palette.textPrimary, fontWeight: 600 }}>
+          production AI
+        </Box>
+        . I design and maintain large data schemas with automated recovery, and
+        build cost-efficient AWS platforms and RAG/LLM pipelines that make a 50TB+
+        analytics warehouse accessible for ML.
       </Typography>
 
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 4.5 }}>

@@ -69,8 +69,12 @@ const AboutSection = React.forwardRef((props, ref) => {
           >
             I care about systems that are resilient, observable, and
             cost-efficient — the kind that quietly keep working while the product
-            scales. Outside of engineering I enjoy skiing, cooking, and
-            travelling the world.
+            scales. I also lead work end-to-end: managing engineers, coordinating
+            internal teams and external partners across technical and non-technical
+            lines, building custom internal tooling, and wrangling messy data into
+            shape — imputing, normalizing, transforming, and analyzing it.
+            Outside of engineering I enjoy skiing, cooking, and travelling the
+            world.
           </Typography>
 
           <Grid container spacing={2} sx={{ mt: 1.5 }}>
