@@ -20,7 +20,7 @@ export const experience = [
     period: 'Jan 2024 — Present',
     current: true,
     points: [
-      'Architected and led a production RAG pipeline on AWS Bedrock and Qdrant, using Cohere Embed V4 semantic retrieval across 400K+ ad-creative embeddings to automate structured JSON layout generation; established retrieval benchmarks (P@1, MRR).',
+      'Architected and led development of a production RAG pipeline on AWS Bedrock and Qdrant, automating structured JSON layout generation across 400K+ ad-creative embeddings.',
       'Managing a team executing a Lambda backend modernization — blue-green deployments, a structured error framework, modern coding patterns, and enhanced CloudWatch observability to improve deployment safety and reliability.',
       'Built backend data infrastructure supporting a 55TB Redshift warehouse, 3TB S3 data lake, and 700GB MongoDB dataset; onboarded a UBC Masters of Data Science capstone team by architecting isolated cloud environments (IAM, S3, MongoDB, GCP) and custom Python tooling libraries.',
     ],
@@ -33,9 +33,7 @@ export const experience = [
     location: 'Vancouver, BC',
     period: 'Sept 2023 — Jan 2024',
     points: [
-      'Led development of a platform-wide error tracking and auto-recovery system, reducing monthly engineering support tickets by 86% and improving reliability during critical failures.',
-      'Migrated analytics tracking from EC2 to Lambda@Edge, cutting monthly infrastructure costs by ~$7,500 (65%) and improving response latency by 9%.',
-      'Designed an event-driven image optimization service using API Gateway, Cognito (P2P auth), Lambda, and S3 to replace an unreliable third-party API, reducing monthly costs by 98% while improving uptime.',
+      'Led a platform-wide serverless cost-and-reliability overhaul across the analytics and image pipelines — error tracking & auto-recovery, an EC2→Lambda@Edge migration, and an in-house image-optimization service (API Gateway, Cognito, Lambda, S3).',
       'Engineered custom Python libraries that cut experimental iteration cycles from 45 minutes to under 5.',
     ],
     tech: ['Lambda@Edge', 'API Gateway', 'Cognito', 'S3', 'Python', 'CloudWatch'],
@@ -51,6 +49,33 @@ export const experience = [
       'Designed a SQL database and accompanying Python scripts for OLTP workloads, improving first-byte latency by 33%.',
     ],
     tech: ['Python', 'SQL', 'ETL', 'JavaScript', 'C#'],
+  },
+];
+
+// Company work, shown as metric-driven case studies at the top of "Selected Work".
+export const caseStudies = [
+  {
+    company: 'Responsive Ads',
+    title: 'Production RAG Layout Pipeline',
+    metrics: [
+      { value: '400K+', label: 'creative embeddings' },
+      { value: 'P@1 · MRR', label: 'retrieval benchmarks' },
+    ],
+    blurb:
+      "Architected and led the team's first production RAG pipeline on AWS Bedrock and Qdrant, using Cohere Embed V4 semantic retrieval across 400K+ ad-creative embeddings to automate structured JSON layout generation — and established the retrieval evaluation benchmarks (P@1, MRR) it ships against.",
+    tech: ['AWS Bedrock', 'Qdrant', 'Cohere Embed V4', 'RAG', 'Python'],
+  },
+  {
+    company: 'Responsive Ads',
+    title: 'Serverless Cost & Reliability Overhaul',
+    metrics: [
+      { value: '−86%', label: 'support tickets' },
+      { value: '−$7.5K/mo', label: 'infra cost' },
+      { value: '−98%', label: 'image-service cost' },
+    ],
+    blurb:
+      'Led a platform-wide error tracking and auto-recovery system and re-architected analytics and image services onto serverless (Lambda@Edge, API Gateway, Cognito, S3) — cutting support tickets 86%, infrastructure cost ~$7,500/mo, and image-processing cost 98% while improving uptime and latency.',
+    tech: ['Lambda@Edge', 'API Gateway', 'Cognito', 'S3', 'CloudWatch'],
   },
 ];
 

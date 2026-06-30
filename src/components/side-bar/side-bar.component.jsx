@@ -15,6 +15,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import { palette } from '../../theme';
 import { RESUME_URL } from '../../data';
+import Monogram from '../ui/monogram';
 
 export const navItems = [
   { id: 'home', label: 'Home', icon: <HomeOutlinedIcon fontSize="small" /> },
@@ -43,38 +44,21 @@ const SideBar = ({ onNavigate, active }) => {
     >
       {/* Logo / identity */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 4, px: 0.5 }}>
-        <Box
-          sx={{
-            width: 44,
-            height: 44,
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: 18,
-            color: palette.accentContrast,
-            background: `linear-gradient(140deg, ${palette.accent}, ${palette.accentDeep})`,
-            boxShadow: `0 8px 22px -8px ${palette.accentGlow}`,
-          }}
-        >
-          ND
-        </Box>
+        <Monogram size={44} />
         <Box>
           <Typography
             sx={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontWeight: 600,
               color: palette.textPrimary,
-              fontSize: 16,
+              fontSize: 20,
               lineHeight: 1.1,
             }}
           >
             Nikko Dumrique
           </Typography>
           <Typography sx={{ color: palette.textMuted, fontSize: 11.5 }}>
-            Backend &amp; AI Engineer
+            Backend Software Developer
           </Typography>
         </Box>
       </Box>

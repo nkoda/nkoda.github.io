@@ -11,6 +11,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import DataLinesBackground from './components/background/data-lines-background';
+import Monogram from './components/ui/monogram';
 import SideBar, { navItems } from './components/side-bar/side-bar.component';
 import HomeSection from './components/main-sections/home.main-section';
 import AboutSection from './components/main-sections/about.main-section';
@@ -77,11 +78,14 @@ function App() {
           >
             <MenuIcon />
           </IconButton>
+          <Monogram size={32} />
           <Typography
             sx={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontWeight: 600,
+              fontSize: 20,
               color: palette.textPrimary,
+              ml: 1.25,
             }}
           >
             Nikko Dumrique

@@ -16,6 +16,7 @@ const taglines = [
   '将您的想法制作成软件。', // Mandarin
   'あなたのアイデアをソフトウェアに。', // Japanese
   'Gawing software ang iyong ideya.', // Tagalog
+  'Biến ý tưởng của bạn thành phần mềm.', // Vietnamese
 ];
 
 const HomeSection = ({ onNavigate }) => {

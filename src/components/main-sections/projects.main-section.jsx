@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Section, SectionHeading, GlassCard, Tag } from '../ui/primitives';
 import { palette } from '../../theme';
+import { caseStudies } from '../../data';
 
 import img_datapipeline from '../../assets/data_pipeline.drawio.svg';
 import img_atlas from '../../assets/atlas.png';
@@ -58,7 +59,99 @@ const projects = [
   },
 ];
 
-// Image that fills its frame (cover) or sits fully visible on a charcoal panel (contain).
+const SubLabel = ({ children }) => (
+  <Typography
+    className="mono"
+    sx={{
+      color: palette.accent,
+      fontSize: 12.5,
+      letterSpacing: '0.16em',
+      textTransform: 'uppercase',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 1.2,
+      mb: 2.5,
+      mt: 1,
+      '&::after': {
+        content: '""',
+        flex: 1,
+        height: '1px',
+        background: palette.border,
+      },
+    }}
+  >
+    {children}
+  </Typography>
+);
+
+const TitleRow = ({ title, period, size = '1.2rem' }) => (
+  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 1, mb: 1.2 }}>
+    <Typography variant="h5" sx={{ color: palette.textPrimary, fontSize: size }}>
+      {title}
+    </Typography>
+    {period && (
+      <Typography className="mono" sx={{ color: palette.textMuted, fontSize: 12, whiteSpace: 'nowrap' }}>
+        {period}
+      </Typography>
+    )}
+  </Box>
+);
+
+// Company work — visual hero is a band of headline metrics (no proprietary screenshots).
+const CaseStudyCard = ({ study }) => (
+  <GlassCard sx={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', height: '100%' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 2,
+        p: { xs: 2.5, md: 3 },
+        background:
+          'linear-gradient(135deg, rgba(200,130,90,0.10), rgba(20,14,16,0.2)), #1B1316',
+        borderBottom: `1px solid ${palette.border}`,
+        backgroundImage:
+          'linear-gradient(rgba(200,130,90,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(200,130,90,0.05) 1px, transparent 1px)',
+        backgroundSize: '26px 26px',
+      }}
+    >
+      {study.metrics.map((m) => (
+        <Box key={m.label} sx={{ flex: 1, textAlign: 'center' }}>
+          <Typography
+            sx={{
+              fontFamily: "'Jost', sans-serif",
+              fontWeight: 600,
+              color: palette.accent,
+              fontSize: { xs: '1.35rem', md: '1.6rem' },
+              lineHeight: 1.1,
+            }}
+          >
+            {m.value}
+          </Typography>
+          <Typography sx={{ color: palette.textMuted, fontSize: 11.5, mt: 0.6, lineHeight: 1.3 }}>
+            {m.label}
+          </Typography>
+        </Box>
+      ))}
+    </Box>
+    <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+      <Typography
+        className="mono"
+        sx={{ color: palette.accentSoft, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', mb: 1 }}
+      >
+        {study.company} · Case Study
+      </Typography>
+      <TitleRow title={study.title} size="1.3rem" />
+      <Typography sx={{ color: palette.textSecondary, fontSize: 14.5, lineHeight: 1.65, flexGrow: 1 }}>
+        {study.blurb}
+      </Typography>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8, mt: 2.2 }}>
+        {study.tech.map((t) => (
+          <Tag key={t} label={t} />
+        ))}
+      </Box>
+    </Box>
+  </GlassCard>
+);
+
 const ProjectImage = ({ project, aspectRatio }) => (
   <Box
     sx={{
@@ -85,38 +178,11 @@ const ProjectImage = ({ project, aspectRatio }) => (
   </Box>
 );
 
-const TitleRow = ({ project, size = '1.2rem' }) => (
-  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 1, mb: 1.2 }}>
-    <Typography variant="h5" sx={{ color: palette.textPrimary, fontSize: size }}>
-      {project.title}
-    </Typography>
-    <Typography className="mono" sx={{ color: palette.textMuted, fontSize: 12, whiteSpace: 'nowrap' }}>
-      {project.period}
-    </Typography>
-  </Box>
-);
-
 const FeaturedProject = ({ project }) => (
   <GlassCard sx={{ overflow: 'hidden', '&:hover .proj-img': { transform: 'scale(1.03)' } }}>
     <ProjectImage project={project} aspectRatio={{ xs: '16 / 9', md: '32 / 9' }} />
     <Box sx={{ p: { xs: 3, md: 4 } }}>
-      <Box
-        sx={{
-          display: 'inline-block',
-          mb: 1.5,
-          px: 1.2,
-          py: 0.4,
-          borderRadius: '6px',
-          border: `1px solid ${palette.borderStrong}`,
-          color: palette.accent,
-          fontSize: 11,
-          letterSpacing: '0.12em',
-        }}
-        className="mono"
-      >
-        FEATURED
-      </Box>
-      <TitleRow project={project} size="1.6rem" />
+      <TitleRow title={project.title} period={project.period} size="1.6rem" />
       <Typography sx={{ color: palette.textSecondary, fontSize: 15, lineHeight: 1.7, maxWidth: 760 }}>
         {project.blurb}
       </Typography>
@@ -140,7 +206,7 @@ const ProjectCard = ({ project }) => (
   >
     <ProjectImage project={project} aspectRatio="16 / 9" />
     <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-      <TitleRow project={project} />
+      <TitleRow title={project.title} period={project.period} />
       <Typography
         sx={{
           color: palette.textSecondary,
@@ -169,14 +235,25 @@ const ProjectsSection = React.forwardRef((props, ref) => {
   const rest = projects.filter((p) => !p.featured);
   return (
     <Section id="projects" ref={ref}>
-      <SectionHeading eyebrow="04 / Selected Work" title="Projects" />
+      <SectionHeading eyebrow="04 / Selected Work" title="Selected Work" />
 
+      <SubLabel>Professional · Responsive Ads</SubLabel>
+      <Grid container spacing={2.5}>
+        {caseStudies.map((study) => (
+          <Grid item xs={12} md={6} key={study.title}>
+            <CaseStudyCard study={study} />
+          </Grid>
+        ))}
+      </Grid>
+
+      <Box sx={{ mt: 6 }}>
+        <SubLabel>Personal Projects</SubLabel>
+      </Box>
       {featured && (
         <Box sx={{ mb: 2.5 }}>
           <FeaturedProject project={featured} />
         </Box>
       )}
-
       <Grid container spacing={2.5}>
         {rest.map((project) => (
           <Grid item xs={12} sm={6} key={project.title}>
