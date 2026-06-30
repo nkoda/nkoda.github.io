@@ -18,6 +18,7 @@ const projects = [
     title: 'Financial Data Pipeline',
     period: 'May 2023',
     image: img_datapipeline,
+    contain: true,
     blurb:
       'End-to-end pipeline predicting equity trading volume from historical data. A LightGBM regression model is served via a Flask API, containerized with Docker, and orchestrated as an Airflow workflow — with thread-pooled ingestion cutting execution time by 47%.',
     tech: ['Apache Airflow', 'LightGBM', 'Flask', 'Docker', 'Python'],
@@ -36,7 +37,7 @@ const projects = [
     period: 'Mar 2023',
     image: img_atlas,
     blurb:
-      'A project-catalog web app with an Express.js REST API and a React single-page client. Endpoints documented with Swagger; both services containerized with Docker for consistent deployment.',
+      'A project-catalog web app with an Express.js REST API and a React single-page client. Endpoints documented with Swagger; both services containerized with Docker.',
     tech: ['React', 'Express', 'Swagger', 'Docker'],
   },
   {
@@ -57,45 +58,104 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ project }) => (
-  <GlassCard sx={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+// Image that fills its frame (cover) or sits fully visible on a charcoal panel (contain).
+const ProjectImage = ({ project, aspectRatio }) => (
+  <Box
+    sx={{
+      position: 'relative',
+      width: '100%',
+      aspectRatio,
+      overflow: 'hidden',
+      background: 'linear-gradient(135deg, #2A1F22 0%, #17100F 100%)',
+      borderBottom: `1px solid ${palette.border}`,
+    }}
+  >
     <Box
+      className="proj-img"
       sx={{
-        height: 150,
-        background: `linear-gradient(180deg, rgba(20,14,16,0) 40%, rgba(20,14,16,0.88) 100%), url(${project.image})`,
-        backgroundSize: 'cover',
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: `url(${project.image})`,
+        backgroundSize: project.contain ? 'contain' : 'cover',
         backgroundPosition: 'center',
-        borderBottom: `1px solid ${palette.border}`,
+        backgroundRepeat: 'no-repeat',
+        transition: 'transform 0.5s ease',
       }}
     />
-    <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+  </Box>
+);
+
+const TitleRow = ({ project, size = '1.2rem' }) => (
+  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 1, mb: 1.2 }}>
+    <Typography variant="h5" sx={{ color: palette.textPrimary, fontSize: size }}>
+      {project.title}
+    </Typography>
+    <Typography className="mono" sx={{ color: palette.textMuted, fontSize: 12, whiteSpace: 'nowrap' }}>
+      {project.period}
+    </Typography>
+  </Box>
+);
+
+const FeaturedProject = ({ project }) => (
+  <GlassCard sx={{ overflow: 'hidden', '&:hover .proj-img': { transform: 'scale(1.03)' } }}>
+    <ProjectImage project={project} aspectRatio={{ xs: '16 / 9', md: '32 / 9' }} />
+    <Box sx={{ p: { xs: 3, md: 4 } }}>
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'baseline',
-          gap: 1,
-          mb: 1,
+          display: 'inline-block',
+          mb: 1.5,
+          px: 1.2,
+          py: 0.4,
+          borderRadius: '6px',
+          border: `1px solid ${palette.borderStrong}`,
+          color: palette.accent,
+          fontSize: 11,
+          letterSpacing: '0.12em',
         }}
+        className="mono"
       >
-        <Typography variant="h6" sx={{ color: palette.textPrimary, fontSize: '1.15rem' }}>
-          {project.title}
-        </Typography>
-        <Typography className="mono" sx={{ color: palette.textMuted, fontSize: 12 }}>
-          {project.period}
-        </Typography>
+        FEATURED
       </Box>
+      <TitleRow project={project} size="1.6rem" />
+      <Typography sx={{ color: palette.textSecondary, fontSize: 15, lineHeight: 1.7, maxWidth: 760 }}>
+        {project.blurb}
+      </Typography>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.9, mt: 2.5 }}>
+        {project.tech.map((t) => (
+          <Tag key={t} label={t} />
+        ))}
+      </Box>
+    </Box>
+  </GlassCard>
+);
+
+const ProjectCard = ({ project }) => (
+  <GlassCard
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'hidden',
+      '&:hover .proj-img': { transform: 'scale(1.06)' },
+    }}
+  >
+    <ProjectImage project={project} aspectRatio="16 / 9" />
+    <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+      <TitleRow project={project} />
       <Typography
         sx={{
           color: palette.textSecondary,
           fontSize: 14.5,
           lineHeight: 1.6,
           flexGrow: 1,
+          display: '-webkit-box',
+          WebkitLineClamp: 3,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
         }}
       >
         {project.blurb}
       </Typography>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8, mt: 2.5 }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8, mt: 2.2 }}>
         {project.tech.map((t) => (
           <Tag key={t} label={t} />
         ))}
@@ -105,16 +165,26 @@ const ProjectCard = ({ project }) => (
 );
 
 const ProjectsSection = React.forwardRef((props, ref) => {
+  const featured = projects.find((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
   return (
     <Section id="projects" ref={ref}>
       <SectionHeading eyebrow="04 / Selected Work" title="Projects" />
+
+      {featured && (
+        <Box sx={{ mb: 2.5 }}>
+          <FeaturedProject project={featured} />
+        </Box>
+      )}
+
       <Grid container spacing={2.5}>
-        {projects.map((project) => (
-          <Grid item xs={12} sm={6} md={project.featured ? 6 : 4} key={project.title}>
+        {rest.map((project) => (
+          <Grid item xs={12} sm={6} key={project.title}>
             <ProjectCard project={project} />
           </Grid>
         ))}
       </Grid>
+
       <Box sx={{ textAlign: 'center', mt: 5 }}>
         <Typography sx={{ color: palette.textSecondary, fontSize: 15, mb: 1.5 }}>
           More on GitHub
