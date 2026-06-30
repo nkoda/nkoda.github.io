@@ -8,6 +8,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
+// import TerrainOutlinedIcon from '@mui/icons-material/TerrainOutlined'; // for "Off the Clock" — disabled
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -21,6 +22,7 @@ export const navItems = [
   { id: 'experience', label: 'Experience', icon: <WorkOutlineOutlinedIcon fontSize="small" /> },
   { id: 'skills', label: 'Skills', icon: <CodeOutlinedIcon fontSize="small" /> },
   { id: 'projects', label: 'Projects', icon: <FolderOutlinedIcon fontSize="small" /> },
+  // { id: 'life', label: 'Off the Clock', icon: <TerrainOutlinedIcon fontSize="small" /> }, // temporarily disabled
   { id: 'contact', label: 'Contact', icon: <MailOutlineIcon fontSize="small" /> },
 ];
 
@@ -33,7 +35,7 @@ const SideBar = ({ onNavigate, active }) => {
         flexDirection: 'column',
         px: 2.5,
         py: 3,
-        background: 'rgba(8, 12, 17, 0.72)',
+        background: 'rgba(20, 14, 16, 0.72)',
         backdropFilter: 'blur(14px)',
         WebkitBackdropFilter: 'blur(14px)',
         borderRight: { md: `1px solid ${palette.border}` },
@@ -52,7 +54,7 @@ const SideBar = ({ onNavigate, active }) => {
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 700,
             fontSize: 18,
-            color: '#06231a',
+            color: palette.accentContrast,
             background: `linear-gradient(140deg, ${palette.accent}, ${palette.accentDeep})`,
             boxShadow: `0 8px 22px -8px ${palette.accentGlow}`,
           }}
@@ -95,11 +97,11 @@ const SideBar = ({ onNavigate, active }) => {
                 cursor: 'pointer',
                 position: 'relative',
                 color: isActive ? palette.accent : palette.textSecondary,
-                background: isActive ? 'rgba(52, 211, 153, 0.08)' : 'transparent',
+                background: isActive ? 'rgba(200, 130, 90, 0.1)' : 'transparent',
                 transition: 'all 0.2s ease',
                 '&:hover': {
                   color: palette.accent,
-                  background: 'rgba(52, 211, 153, 0.06)',
+                  background: 'rgba(200, 130, 90, 0.07)',
                 },
                 '&::before': {
                   content: '""',

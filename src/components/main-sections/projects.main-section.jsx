@@ -62,7 +62,7 @@ const ProjectCard = ({ project }) => (
     <Box
       sx={{
         height: 150,
-        background: `linear-gradient(180deg, rgba(8,12,17,0) 40%, rgba(8,12,17,0.85) 100%), url(${project.image})`,
+        background: `linear-gradient(180deg, rgba(20,14,16,0) 40%, rgba(20,14,16,0.88) 100%), url(${project.image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         borderBottom: `1px solid ${palette.border}`,

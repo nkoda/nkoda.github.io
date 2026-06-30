@@ -124,7 +124,7 @@ const HomeSection = ({ onNavigate }) => {
             py: 1.2,
             borderRadius: '10px',
             background: palette.accent,
-            color: '#06231a',
+            color: palette.accentContrast,
             '&:hover': { background: palette.accentSoft },
           }}
         >
@@ -146,7 +146,7 @@ const HomeSection = ({ onNavigate }) => {
             borderColor: palette.borderStrong,
             '&:hover': {
               borderColor: palette.accent,
-              background: 'rgba(52, 211, 153, 0.08)',
+              background: 'rgba(200, 130, 90, 0.1)',
             },
           }}
         >

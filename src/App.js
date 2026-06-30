@@ -17,6 +17,7 @@ import AboutSection from './components/main-sections/about.main-section';
 import ExperienceSection from './components/main-sections/experience.main-section';
 import SkillsSection from './components/main-sections/skills.main-section';
 import ProjectsSection from './components/main-sections/projects.main-section';
+// import LifeSection from './components/main-sections/life.main-section'; // "Off the Clock" — temporarily disabled
 import ContactSection from './components/main-sections/contact.main-section';
 import { palette } from './theme';
 
@@ -61,7 +62,7 @@ function App() {
         elevation={0}
         sx={{
           display: { md: 'none' },
-          background: 'rgba(8, 12, 17, 0.8)',
+          background: 'rgba(20, 14, 16, 0.8)',
           backdropFilter: 'blur(12px)',
           borderBottom: `1px solid ${palette.border}`,
           zIndex: (t) => t.zIndex.drawer + 1,
@@ -137,6 +138,7 @@ function App() {
         <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
+        {/* <LifeSection /> */}
         <ContactSection />
       </Box>
     </Box>

@@ -1,7 +1,7 @@
 :root {
-  --bg: #080c11;
-  --accent: #34d399;
-  --text-secondary: #9aabb6;
+  --bg: #1c1518;
+  --accent: #c8825a;
+  --text-secondary: #b6a89e;
 }
 
 html {
@@ -10,19 +10,19 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg);
-  color: #e9eff3;
+  color: #ece0d6;
   overflow-x: hidden;
   touch-action: pan-y;
 }
 
 code,
 .mono {
-  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
+  font-family: 'IBM Plex Mono', source-code-pro, Menlo, Monaco, Consolas,
     'Courier New', monospace;
 }
 
@@ -31,17 +31,17 @@ code,
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #080c11;
+  background: #1c1518;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(52, 211, 153, 0.25);
+  background: rgba(200, 130, 90, 0.3);
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(52, 211, 153, 0.45);
+  background: rgba(200, 130, 90, 0.5);
 }
 
 ::selection {
-  background: rgba(52, 211, 153, 0.3);
+  background: rgba(200, 130, 90, 0.32);
   color: #ffffff;
 }

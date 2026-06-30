@@ -1,7 +1,8 @@
 // Resume / portfolio content — single source of truth.
 
-export const RESUME_URL =
-  'https://drive.google.com/file/d/1MRkU9bS6or3agbHDOE1lTJFUx7JpWkVY/view?usp=sharing';
+// Resume is hosted in the repo at public/resume.pdf and served at /resume.pdf.
+// To update it, replace public/resume.pdf and redeploy.
+export const RESUME_URL = `${process.env.PUBLIC_URL}/resume.pdf`;
 
 export const stats = [
   { value: '50TB+', label: 'Data under management' },

@@ -105,7 +105,7 @@ export const Tag = ({ label }) => (
       py: 0.6,
       borderRadius: '8px',
       border: `1px solid ${palette.border}`,
-      background: 'rgba(52, 211, 153, 0.06)',
+      background: 'rgba(200, 130, 90, 0.07)',
       whiteSpace: 'nowrap',
     }}
   >
