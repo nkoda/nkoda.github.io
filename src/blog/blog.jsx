@@ -34,7 +34,7 @@ const Cover = ({ post, size = 'card' }) => {
         borderRadius: big ? '22px' : '16px',
         aspectRatio: size === 'post' ? { xs: '16 / 10', md: '2.4 / 1' } : big ? { xs: '16 / 10', sm: '16 / 9' } : '16 / 10',
         background: post.image
-          ? `center / cover no-repeat url(${post.image})`
+          ? `${post.imagePosition || 'center 28%'} / cover no-repeat url(${post.image})`
           : `radial-gradient(120% 90% at 0% 0%, ${a} 0%, transparent 60%),
              radial-gradient(90% 90% at 100% 100%, ${b} 0%, transparent 65%),
              ${palette.bgElevated}`,
@@ -387,6 +387,8 @@ const proseSx = {
   '& pre': { my: 4, p: 2.5, borderRadius: '14px', overflowX: 'auto', background: '#150F11', border: `1px solid ${palette.border}`, '& code': { background: 'none', p: 0, fontSize: 14.5, lineHeight: 1.6 } },
   '& hr': { border: 0, my: 6, textAlign: 'center', '&::after': { content: '"· · ·"', color: muted, letterSpacing: '0.6em' } },
   '& figure': { my: 5, mx: 0, '& img': { width: '100%', maxWidth: 480, mx: 'auto', borderRadius: '14px', display: 'block' } },
+  // Own photos and diagrams run the full column; GIFs stay small.
+  '& figure img[src^="/blog-media/"]': { maxWidth: '100%' },
   '& figcaption': { mt: 1.25, fontSize: 13.5, color: muted, textAlign: 'center' },
 };
 

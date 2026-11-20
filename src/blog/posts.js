@@ -3,6 +3,124 @@
 
 module.exports = [
   {
+    slug: 'scrap-copper-gesture-sensor',
+    title: 'I taped scrap copper to my arm and it read my hand',
+    subtitle: 'My favourite project ever is a hardware one, which is awkward when your whole career is software.',
+    topic: 'Projects',
+    date: '2026-11-20',
+    coverWord: 'Scrap copper.',
+    colors: ['#9A5B38', '#2A3A44'],
+    image: '/blog-media/eit-poster.jpg',
+    imagePosition: 'center top',
+    credit: 'My PHYS 404 poster on electrical impedance tomography. Full poster further down.',
+    body: `
+My career is software and data. My favourite project, though, is a breadboard taped to my forearm.
+
+I almost never get to talk about it. It doesn't come up in backend interviews, and "so I ran current through my arm" is a weird opener at a team lunch. It also worked really well, right up until I demoed it to my class and forgot to recalibrate it. We'll get there.
+
+## Two courses, one project
+
+This was 2021, deep in COVID. I was taking PHYS 404 and PHYS 319 at UBC at the same time, and I figured: why build two things when I can go deep on one? For 404 I made a research poster on electrical impedance tomography. For 319 I actually built the thing. Two birds, one stone.
+
+Labs were mostly happening at home, so "the lab" was my desk and whatever I could find lying around. That shaped the whole project. I got kind of obsessed with one question: how cheap can I make this and still have it work?
+
+## So what is EIT
+
+Most medical imaging works by sending something through you, like X-rays or ultrasound, and looking at what comes out the other side. Electrical impedance tomography does it with electricity instead. You put electrodes on the skin, push a small alternating current between some of them, and measure the voltages on the others. Different tissues resist current differently (that resistance is the impedance), so the voltage pattern tells you something about what's inside.
+
+My poster title was "EIT and its shocking innovation". I'm still proud of that one.
+
+The things that got me excited when I was researching it:
+
+- It's non-invasive and there's no radiation.
+- The equipment is magnitudes cheaper and smaller than other imaging machines.
+- It's fast enough to watch things change in real time.
+
+Hospitals use it to keep an eye on things like lung ventilation in patients who are stuck in bed, and it's been researched for breast cancer screening. And because it's so cheap, people started using it outside medicine. One of those uses was hand gesture recognition, which is where I came in.
+
+There are two main ways to wire it up. With four-pole, you send current between one pair of electrodes and measure the voltage on a different pair. With two-pole, you send current and measure across the same pair. Then there's how you turn the readings into an actual picture. The simple version (difference EIT) compares readings to a baseline, which is very doable. The full version (absolute EIT) turns into a nasty math problem where small amounts of noise blow up into big errors in the image.
+
+I did not try to make a picture. I just needed the readings to change in a way a computer could learn.
+
+## The build
+
+Your forearm is full of muscles and tendons. When you make a fist or open your hand, they change shape, so the impedance around your wrist changes too, and so do the numbers.
+
+My version was strips of scrap copper I found lying around, held on with blue tape as electrodes, plus a Texas Instruments MSP430 LaunchPad (a cheap little dev board), a breadboard and a pile of jumper wires.
+
+![My forearm with copper electrodes taped around the wrist, wired to a breadboard and a red TI LaunchPad](/blog-media/eit-rig.jpg "The whole rig: blue tape, scrap copper, a breadboard and a LaunchPad, on my desk at home.")
+
+Before I started the actual project, I did a quick proof of concept: one copper strip on my wrist, a handheld scope, and me changing my hand to see if the impedance reading moved at all. It did:
+
+![Three photos of a handheld scope reading my wrist electrode: 0.068 V with a fist, 0.070 V with an open hand, 0.075 V with my hand relaxed palm up](/blog-media/eit-readings.jpg "Proof of concept, measuring my wrist: fist 0.068 V, open hand 0.070 V, relaxed palm up 0.075 V.")
+
+A few thousandths of a volt between gestures. Tiny, but different every time I changed my hand, and that was enough for me to go build the real thing.
+
+The LaunchPad reads five electrodes through its analog-to-digital converter (the bit that turns a voltage into a number), one after another, and streams the readings to my laptop over a serial cable at 9600 baud (very old-school, very slow, totally fine for five numbers). On the laptop, a Python script plots each electrode live and guesses the gesture with a k-nearest-neighbours classifier. That's a fancy name for "find the training examples that look most like this reading, and go with their label."
+
+The whole "AI" part is two lines:
+
+\`\`\`python
+knn = KNeighborsClassifier(n_neighbors = 4, weights = 'distance')
+knn.fit(train[factors], train[predict])
+\`\`\`
+
+And it worked! With the few electrodes I'd rigged up, it could tell a few gestures apart. The training data that made it into the repo is 235 readings of me opening and closing my fist, over and over.
+
+## Yes, there's current going through your arm
+
+This is the part people ask about. To measure impedance you have to send a small current through your forearm, and the first time you switch it on you definitely notice. It's quite an interesting feeling.
+
+![Doc Brown getting hit by a huge bolt of lightning](https://media.giphy.com/media/CkYl1qlzkxPRbklfXx/giphy.webp "Me the first time I turned it on, roughly. ([via GIPHY](https://giphy.com/gifs/CkYl1qlzkxPRbklfXx))")
+
+After a while you get used to it and stop noticing. Quick and serious note though: there are medical safety standards for exactly how much current you're allowed to put through a person, and the limits are small. If you build one of these, look those up first and stay well under them.
+
+## The demo
+
+Here's the painful part. It worked well. Like, really well, at my desk.
+
+By then I'd built the electrodes into a wristband you could just slap on. I calibrated it the night before, which means recording a fresh set of readings of my hand in each gesture so the classifier has something to compare against. Then on presentation day I put the band back on and went straight into the demo, without recalibrating.
+
+Here's why that killed it. EIT is really measuring the conductivity of the slice of your arm under the band, meaning how easily current flows through each bit of it. (X-ray CT has the same idea with a different name, the attenuation coefficient.) Muscle, tendon, fat and bone all conduct differently, and muscle even conducts better along its fibres than across them. So what each electrode reads depends on exactly what's sitting under it.
+
+Put the band back on a few millimetres off and every electrode is now looking at a slightly different slice of you. The readings shift, and last night's training data is describing a different arm. A k-nearest-neighbours classifier can't fix that, because it only knows the readings it has already seen. It can't extrapolate from "electrodes over here" to "electrodes slightly over there".
+
+The funny thing is my own poster warned me. Under cons, I wrote that EIT is extremely sensitive to any changes near or at the electrodes. When your whole signal is a few millivolts, a few millimetres is everything.
+
+If you've ever had a demo work perfectly ten minutes before the meeting, you know.
+
+## Then my brain kind of exploded
+
+![Man with his head exploding into a cloud of smoke and sparkles](https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.webp "Me, finding out about the patents. ([via GIPHY](https://giphy.com/gifs/26ufdipQqU2lhNA4g))")
+
+Later I went down a rabbit hole and found out I was in good company.
+
+The gesture idea itself came out of Carnegie Mellon, where researchers built a low-cost EIT wristband called [Tomo](https://www.figlab.com/research/2015/tomo) back in 2015 (their follow-up paper is reference [1] on my poster). Then Apple filed a patent application for [detecting gestures on AirPods from changes in antenna impedance](https://appleinsider.com/articles/26/01/08/future-airpods-may-gain-finer-and-faster-gesture-recognition). Same family of trick: when your finger gets close, the impedance changes, and you can read that as a gesture. And there was a startup, CTRL-labs, building a wristband controller that read signals from your arm to operate computers, until Facebook bought it in 2019.
+
+So a university lab, Apple and Facebook were all working on reading your body's electrical signals as input. I was doing it with copper and tape on my desk.
+
+## What I'd do next
+
+If I ever find the time, I want to pick this back up with better electrodes and more of them, and actually hook the output up to control something, and long term a cheap bionic arm would be the dream.
+
+I've also got an oxygen sensor and a heartbeat sensor sitting in a drawer. Rings and bands like Oura and Whoop are mostly optical heart sensors, a temperature sensor and an accelerometer, so building my own janky version feels very doable.
+
+Here's the full poster, if you want the deeper version:
+
+![My UBC PHYS 404 research poster titled Electrical Impedance Tomography (EIT) and its shocking innovation](/blog-media/eit-poster.jpg "PHYS 404 poster. [Open full size](/blog-media/eit-poster.jpg)")
+
+## About that code
+
+The [code is on GitHub](https://github.com/nkoda/EIT-Hand-Gesture-Recognition), and I'll be upfront: it's rough. This was a research project squeezed around classes that met once a week, and it was written before AI coding tools were a thing. No agent to ask. Just the datasheet, a TI example file to start from, and a lot of trial and error. One of my comments literally points at the datasheet section I copied the serial settings from.
+
+Rereading it now, I'd flag a couple of things in code review. The ADC's input channel gets set once and never changes, and the loop counter can walk one step past the end of the electrode list. Today an agent would catch both in seconds.
+
+But I kind of love that it's rough. I had very basic embedded skills, and I still got copper, a dev board and some Python to read my hand. There's an art to that, figuring out just enough to make the thing work, and I think it's worth keeping even now that the tools do more of it for us.
+
+I'll calibrate first this time.
+`,
+  },
+  {
     slug: 'fishing-before-first-light',
     title: 'Nothing clears my head like a river before sunrise',
     subtitle: 'No phone, no work email, and a chinook on the line in the dark. Also, this season humbled me.',
