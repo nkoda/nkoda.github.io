@@ -4,6 +4,7 @@
 
 ## Blog
 
+- [I taped scrap copper to my arm and it read my hand](https://nkoda.github.io/blog/scrap-copper-gesture-sensor/): My favourite project ever is a hardware one, which is awkward when your whole career is software.
 - [Nothing clears my head like a river before sunrise](https://nkoda.github.io/blog/fishing-before-first-light/): No phone, no work email, and a chinook on the line in the dark. Also, this season humbled me.
 - [Bosun: I built the tool I kept wishing I had](https://nkoda.github.io/blog/bosun-agents-that-prove-it/): A small open-source tool that runs coding agents in parallel and won't hand me their work until it can prove it holds up.
 - [Quantization, or how to fit a giant model in a small box](https://nkoda.github.io/blog/quantization-tradeoffs/): You can shrink a model's memory by 3 to 4x. Here's what you give up, explained without a PhD.
