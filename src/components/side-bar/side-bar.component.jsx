@@ -12,6 +12,7 @@ import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import { palette } from '../../theme';
 import { RESUME_URL } from '../../data';
@@ -108,6 +109,28 @@ const SideBar = ({ onNavigate, active }) => {
             </Box>
           );
         })}
+      </Box>
+
+      {/* The blog lives on its own route, so this is a link rather than a scroll target. */}
+      <Box
+        component="a"
+        href="/blog/"
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1.5,
+          px: 1.5,
+          py: 1.15,
+          mt: 0.5,
+          borderRadius: '10px',
+          textDecoration: 'none',
+          color: palette.textSecondary,
+          transition: 'all 0.2s ease',
+          '&:hover': { color: palette.accent, background: 'rgba(200, 130, 90, 0.07)' },
+        }}
+      >
+        <AutoStoriesOutlinedIcon fontSize="small" />
+        <Typography sx={{ fontSize: 14.5, fontWeight: 500 }}>Blog</Typography>
       </Box>
 
       <Box sx={{ flexGrow: 1 }} />

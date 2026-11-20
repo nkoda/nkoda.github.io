@@ -6,8 +6,10 @@ import { palette } from '../../theme';
  * over a faint blueprint grid, on a warm-charcoal gradient. Reads as precise
  * engineering rather than a hacker network: few nodes, gentle motion, warm tones.
  * Fixed behind all content, pointer-events disabled, respects reduced motion.
+ * Pass `style` to override the outer layer, e.g. { position: 'absolute' } to
+ * confine it to a parent section (the blog hero does this).
  */
-const DataLinesBackground = () => {
+const DataLinesBackground = ({ style }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -149,6 +151,7 @@ const DataLinesBackground = () => {
         zIndex: 0,
         pointerEvents: 'none',
         background: `radial-gradient(130% 130% at 70% 18%, #2A1F22 0%, ${palette.bg} 52%, #120C0E 100%)`,
+        ...style,
       }}
     >
       {/* faint blueprint grid */}

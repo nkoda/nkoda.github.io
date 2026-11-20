@@ -45,3 +45,22 @@ code,
   background: rgba(200, 130, 90, 0.32);
   color: #ffffff;
 }
+
+/* Visible keyboard focus everywhere. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
