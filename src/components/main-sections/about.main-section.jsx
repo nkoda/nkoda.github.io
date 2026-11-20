@@ -55,9 +55,11 @@ const AboutSection = React.forwardRef((props, ref) => {
             <Box component="span" sx={{ color: palette.accent, fontWeight: 600 }}>
               Responsive Ads
             </Box>{' '}
-            I design and operate the cloud infrastructure behind a large-scale ad
-            platform — from serverless backends and 50TB+ data warehouses to the
-            production RAG pipelines that power automated layout generation.
+            I lead a 3-engineer AI team. We took a one-click vision-LLM layout
+            tool to production, and I designed the LLM gateway behind it and own
+            our RAG search. Before that I focused on backend reliability and cost on
+            AWS: error tracking that cut support tickets 86%, and an edge migration
+            that saved ~$7.5K a month.
           </Typography>
           <Typography
             sx={{

@@ -111,9 +111,9 @@ const HomeSection = ({ onNavigate }) => {
         <Box component="span" sx={{ color: palette.textPrimary, fontWeight: 600 }}>
           production AI
         </Box>
-        . I design and maintain large data schemas with automated recovery, and
-        build cost-efficient AWS platforms and RAG/LLM pipelines that make a 50TB+
-        analytics warehouse accessible for ML.
+        . I lead a 3-engineer AI team and build production LLM systems on AWS:
+        LLM gateways with spend caps, RAG search with evals, and the serverless
+        backends that keep them reliable and affordable.
       </Typography>
 
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 4.5 }}>

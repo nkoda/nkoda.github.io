@@ -5,9 +5,9 @@
 export const RESUME_URL = `${process.env.PUBLIC_URL}/resume.pdf`;
 
 export const stats = [
-  { value: '50TB+', label: 'Data under management' },
-  { value: '400K+', label: 'AI embeddings in production' },
-  { value: '86%', label: 'Support tickets eliminated' },
+  { value: '3', label: 'Engineers on the AI team I lead' },
+  { value: '$0.0044', label: 'Per AI layout in production' },
+  { value: '86%', label: 'Fewer support tickets' },
   { value: '$7.5K/mo', label: 'Infra cost cut' },
 ];
 
@@ -20,13 +20,17 @@ export const experience = [
     period: 'Jan 2024 — Present',
     current: true,
     points: [
-      'Architected and led development of a production RAG pipeline on AWS Bedrock and Qdrant, leveraging Cohere Embed V4 semantic retrieval across 400K+ ad-creative embeddings to automate structured JSON layout generation; established retrieval benchmarks (P@1, MRR).',
-      'Manage a team executing a Lambda backend modernization with blue-green deployments, a structured error framework, and enhanced CloudWatch observability to improve deployment safety and system reliability.',
-      'Built backend data infrastructure for a 55TB Redshift warehouse, 3TB S3 data lake, and 700GB MongoDB dataset, enabling scalable analytics and ML/AI training.',
-      'Enabled a UBC Masters of Data Science capstone team by architecting isolated cloud environments (IAM, S3, MongoDB, GCP), building custom Python tooling for data access, and guiding data cleaning, validation, and normalization.',
-      'Identified cost and performance inefficiencies from billing and Zendesk analytics, then implemented automated management scripts (S3 lifecycle policies, GCP Compute Engine cron jobs, Lambda schedulers) that reduced storage footprint by 42% and improved stability.',
+      'Took a one-click vision-LLM layout tool (Claude, Gemini) to production in Oct 2026.',
+      'Owned the release test plan: auth, parallel spend caps and state across server instances. The automated suite passes 1,858 of 1,859.',
+      "Scoped a standalone layout API for one step of an enterprise customer's pipeline after joining their calls. Wrote its API contract and a Lambda container with Bedrock and fal.ai adapters. The build is in progress.",
+      'Lead a 3-engineer AI team. Set the 12-month roadmap and wrote the LLM cost plan. Review and merge every PR.',
+      'Traced a customer data-loss incident to soft-delete code and a 1-day S3 expiry rule. Sized the impact across 227K designs. In replay, the fix cut wrongly deleted files from 426 to 0, with 17 regression tests.',
+      'Designed a provider-agnostic LLM gateway and model catalog for Bedrock and fal.ai. Per-user and per-team spend caps fail closed, and each call logs its cost. Server-side, version-pinned prompts closed a prompt-tampering hole.',
+      'Directed a 190-task team eval: few-shot vision-LLM layouts beat a rule-based resize on all 7 measures, with 61% fewer errors. The shipped model costs $0.0044 per layout at 4.3 s median and 13.1 s p90 latency.',
+      'Tested one model call per element against one call per layout. On one test layout, per-element took 6× the time and 7× the calls, so the team shipped the single call.',
+      'Built and own a RAG search project (Qdrant hybrid search, Cohere Embed v4 and Rerank) for a 183K-design library. Directed retrieval evals (P@1, MRR) that caught a 10.5-point top-1 precision drop before release.',
     ],
-    tech: ['AWS Bedrock', 'Qdrant', 'Cohere Embed V4', 'Lambda', 'Redshift', 'MongoDB', 'GCP'],
+    tech: ['Claude', 'Gemini', 'AWS Bedrock', 'fal.ai', 'Qdrant', 'Cohere', 'TypeScript', 'Python', 'Lambda'],
   },
   {
     role: 'Backend Software Developer',
@@ -35,10 +39,9 @@ export const experience = [
     location: 'Vancouver, BC',
     period: 'Sept 2023 — Jan 2024',
     points: [
-      'Led development of a platform-wide error tracking and auto-recovery system, reducing monthly engineering support tickets by 86% and improving reliability and response time during critical failures.',
-      'Analyzed Zendesk support data to design automated error-recovery workflows with self-healing capabilities, preventing cascading failures during rapid product scaling and reducing MTTR by 74%.',
-      'Architected the migration of analytics tracking from EC2 to Lambda@Edge, cutting monthly infrastructure costs by ~$7,500 (65%) and improving response latency by 9%.',
-      'Built an in-house event-driven image optimization service (API Gateway, Cognito, Lambda, S3) to replace an unreliable third-party API, cutting monthly costs from $5K to $100 while improving uptime.',
+      'Diagnosed repeated client-facing production failures, then built platform-wide error tracking and auto-recovery. Monthly support tickets fell 86% and mean time to recovery fell 74%.',
+      'Moved analytics tracking from EC2 to Lambda@Edge, saving ~$7.5K/month (65%) and cutting latency 9%.',
+      'Replaced an unreliable third-party image API with a serverless service (API Gateway, Cognito, Lambda, S3), lowering cost from $5K to $100/month.',
     ],
     tech: ['Lambda@Edge', 'API Gateway', 'Cognito', 'S3', 'CloudWatch'],
   },
@@ -49,10 +52,10 @@ export const experience = [
     location: 'Vancouver, BC',
     period: 'May 2020 — Aug 2021',
     points: [
-      'Developed an automated ETL pipeline supporting multiple data formats (XML, JSON, CSV) with validation and quality checks, reducing processing time by 82%.',
-      'Designed a SQL database and accompanying Python scripts for OLTP workloads, improving first-byte latency by 33%.',
+      "Led a 7-person team's data infrastructure for a visualization product, and cut its operating costs 70% by moving production from AWS to VMware.",
+      'Built an automated Python ETL pipeline with validation for XML, JSON and CSV data, cutting manual processing time 82%.',
     ],
-    tech: ['Python', 'SQL', 'ETL', 'JavaScript', 'C#'],
+    tech: ['Python', 'SQL', 'ETL', 'Docker', 'JavaScript', 'C#'],
   },
 ];
 
@@ -60,54 +63,54 @@ export const experience = [
 export const caseStudies = [
   {
     company: 'Responsive Ads',
-    title: 'Production RAG Layout Pipeline',
+    title: 'Auto Layout: One-Click AI Layouts',
     metrics: [
-      { value: '400K+', label: 'creative embeddings' },
-      { value: 'P@1 · MRR', label: 'retrieval benchmarks' },
+      { value: '7 / 7', label: 'measures beat rule-based resize' },
+      { value: '$0.0044', label: 'per layout' },
     ],
     blurb:
-      "Architected and led the team's first production RAG pipeline on AWS Bedrock and Qdrant, using Cohere Embed V4 semantic retrieval across 400K+ ad-creative embeddings to automate structured JSON layout generation — and established the retrieval evaluation benchmarks (P@1, MRR) it ships against.",
-    tech: ['AWS Bedrock', 'Qdrant', 'Cohere Embed V4', 'RAG', 'Python'],
+      'Auto Layout turns one finished design into a layout for every target size in one click. A vision LLM (Claude on AWS Bedrock, Gemini on fal.ai) reads a map of the design\'s elements and returns a layout for each size, which the editor applies as one undo step. I took it from prototype to production in Oct 2026: I designed the LLM gateway behind it (fail-closed spend caps, per-call cost logs, version-pinned server-side prompts), built the pipeline that stores every run with designer edits and feedback as training data, and owned the release test plan. A team eval over 190 tasks showed few-shot layouts beat a rule-based resize on all 7 measures, with 61% fewer errors, at $0.0044 per layout and a 4.3 s median latency.',
+    tech: ['Claude', 'Gemini', 'AWS Bedrock', 'fal.ai', 'TypeScript', 'Svelte', 'S3'],
   },
   {
     company: 'Responsive Ads',
-    title: 'Analytics on Lambda@Edge',
+    title: 'LLM Gateway & Spend Controls',
     metrics: [
-      { value: '−$7.5K/mo', label: 'infra cost (−65%)' },
-      { value: '+9%', label: 'faster response' },
+      { value: 'Fail-closed', label: 'per-user & per-team caps' },
+      { value: 'Every call', label: 'cost logged' },
     ],
     blurb:
-      "Migrated the platform's analytics tracking from EC2 to Lambda@Edge — pushing tracking out to the network edge to improve global presence and response latency while cutting infrastructure cost by ~$7,500/mo (65%).",
-    tech: ['Lambda@Edge', 'CloudFront', 'S3', 'CloudWatch', 'Python'],
+      'Designed a provider-agnostic LLM gateway and model catalog for Bedrock and fal.ai. Spend caps per user and team fail closed, each call logs its cost from the AWS Price List, and server-side, version-pinned prompts closed a prompt-tampering hole.',
+    tech: ['AWS Bedrock', 'fal.ai', 'Prompt Manager', 'Node.js'],
   },
   {
     company: 'Responsive Ads',
-    title: 'Serverless Reliability Overhaul',
+    title: 'RAG Search with Retrieval Evals',
     metrics: [
-      { value: 'Blue-green', label: 'zero-downtime deploys' },
-      { value: 'Real-time', label: 'developer alerting' },
+      { value: '183K', label: 'design library' },
+      { value: '10.5 pt', label: 'precision drop caught' },
     ],
     blurb:
-      'Leading a re-architecture of our serverless backend to handle the large-scale usage patterns that began breaking as user capacity grew — introducing blue-green deployments, a structured error framework, and deeper CloudWatch observability so developers are alerted to issues the moment they happen.',
-    tech: ['AWS Lambda', 'Blue-Green Deploys', 'CloudWatch', 'Structured Errors'],
+      'Built and own a RAG search project with Qdrant hybrid search, Cohere Embed v4 and Rerank for a 183K-design library. Retrieval evals (P@1, MRR) that I directed caught a 10.5-point top-1 precision drop from a model upgrade before release.',
+    tech: ['Qdrant', 'Cohere Embed v4', 'Cohere Rerank', 'AWS Bedrock', 'Python'],
   },
   {
     company: 'Responsive Ads',
-    title: 'Self-Healing Provisioning Service',
+    title: 'Error Tracking & Edge Analytics',
     metrics: [
-      { value: '−98%', label: 'service cost' },
       { value: '−86%', label: 'support tickets' },
+      { value: '−$7.5K/mo', label: 'infra cost (−65%)' },
     ],
     blurb:
-      "Built an internal, event-driven service with self-healing auto-recovery that provisions and proxies external services, replacing an unreliable third-party dependency — cutting that workload's cost 98%, improving reliability, and reducing engineering support tickets 86%.",
-    tech: ['API Gateway', 'Cognito', 'Lambda', 'S3'],
+      'Built platform-wide error tracking and auto-recovery after diagnosing repeated client-facing failures, cutting monthly support tickets 86% and mean time to recovery 74%. Moved analytics tracking from EC2 to Lambda@Edge, saving ~$7.5K/month and cutting latency 9%.',
+    tech: ['Lambda', 'Lambda@Edge', 'CloudWatch', 'S3'],
   },
 ];
 
 export const skillGroups = [
   {
     title: 'Programming',
-    items: ['Python', 'JavaScript', 'SQL'],
+    items: ['Python', 'TypeScript', 'JavaScript', 'SQL'],
   },
   {
     title: 'Cloud & Infrastructure',
@@ -130,13 +133,15 @@ export const skillGroups = [
   {
     title: 'AI / ML',
     items: [
-      'RAG Pipelines',
+      'Claude & Gemini APIs',
       'AWS Bedrock',
-      'Qdrant',
-      'Cohere Embed V4',
-      'Retrieval Eval',
-      'Model Deployment',
-      'LightGBM',
+      'LLM Gateways',
+      'Spend Caps & Cost Metering',
+      'RAG',
+      'Qdrant Hybrid Search',
+      'Cohere Embed & Rerank',
+      'Retrieval Evals (P@1, MRR)',
+      'Claude Code Multi-Agent Workflows',
     ],
   },
   {
