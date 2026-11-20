@@ -1,0 +1,22 @@
+# Nikko Dumrique
+
+> Senior software developer in Vancouver, BC. Backend and AI engineering.
+
+## Blog
+
+- [Nothing clears my head like a river before sunrise](https://nkoda.github.io/blog/fishing-before-first-light/): No phone, no work email, and a chinook on the line in the dark. Also, this season humbled me.
+- [Bosun: I built the tool I kept wishing I had](https://nkoda.github.io/blog/bosun-agents-that-prove-it/): A small open-source tool that runs coding agents in parallel and won't hand me their work until it can prove it holds up.
+- [Quantization, or how to fit a giant model in a small box](https://nkoda.github.io/blog/quantization-tradeoffs/): You can shrink a model's memory by 3 to 4x. Here's what you give up, explained without a PhD.
+- [AWS will tell you what you spent. Not who spent it.](https://nkoda.github.io/blog/aws-cost-attribution-bedrock/): Why I ended up metering every LLM call myself, even though AWS has gotten better at this.
+- [Zoom out: your agents need a dashboard, not just a chat window](https://nkoda.github.io/blog/zoom-out-agents/): Running three agents in three chat tabs felt productive. Mostly I was scrolling up trying to remember who was doing what.
+- [Prove it: testing your work when AI wrote half of it](https://nkoda.github.io/blog/prove-it-testing-ai-work/): My agents are very confident. That is not the same thing as being right.
+- [Reading the river: tides, reports and a leader box that saves your morning](https://nkoda.github.io/blog/reading-the-river-fraser-valley/): How I figure out when the fish are coming in on the Fraser, and the small gear choices that keep them on the line.
+- [Reviewing PRs when the agents wrote the code](https://nkoda.github.io/blog/reviewing-agent-prs/): The PRs got huge. I stopped reading them line by line and started asking how the data moves.
+- [Use AI as a gasket, not an engine](https://nkoda.github.io/blog/ai-as-a-gasket/): Let the model turn your messy thinking into something structured, once. Then let boring code do the rest.
+- [How to beat Google Maps (and what it says about timing the market)](https://nkoda.github.io/blog/beat-google-maps/): Maps gives you the best route for the average driver. Knowing your road gets you a better one.
+
+## Other
+
+- [Portfolio](https://nkoda.github.io/)
+- [Resume](https://nkoda.github.io/resume.pdf)
+- [Bosun](https://github.com/nkoda/Bosun)
